@@ -126,12 +126,23 @@
 // var foo = new Person("foo@test.com", "Foo", "Bar");
 // foo.getFullName();
 var Student = /** @class */ (function () {
-    function Student() {
+    function Student(email) {
+        this.email = email;
+        this.ctr = 0;
     }
     Student.getName = function () {
         console.log(Student.firstName);
     };
+    Student.prototype.getEmail = function () {
+        Student.counter++;
+        this.ctr++;
+        return this.email + " : " + Student.counter + " : " + this.ctr;
+    };
     Student.firstName = "Foo";
+    Student.counter = 0;
     return Student;
 }());
-Student.getName();
+var foo = new Student("foo@test.com");
+console.log(foo.getEmail());
+var bar = new Student("bar@test.com");
+console.log(bar.getEmail());

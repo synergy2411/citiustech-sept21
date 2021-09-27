@@ -196,9 +196,22 @@
 
 class Student {
     static firstName: string = "Foo";
+    static counter  = 0
+    ctr = 0;
+    constructor(private email : string){
+        
+    }
     static getName(){
         console.log(Student.firstName)
     }
+    getEmail(){
+        Student.counter++
+        this.ctr++
+        return this.email + " : " +Student.counter + " : " + this.ctr;
+    }
 }
 
-Student.getName()
+var foo = new Student("foo@test.com")
+console.log(foo.getEmail())
+var bar = new Student("bar@test.com")
+console.log(bar.getEmail())
