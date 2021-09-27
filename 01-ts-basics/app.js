@@ -1,4 +1,3 @@
-"use strict";
 // var x : number;
 // x = 100;
 // var y : string ;
@@ -89,13 +88,20 @@
 // console.log(foo.getFullName())
 // Classes have their own types
 // class Foo{
+//     email! : string;
+//     constructor(email : string){
+//         this.email = email
+//     }
 // }
 // class Bar {
 // }
 // class Bam{
 //     constructor(private foo : Foo, private bar : Bar){}
+//     getEmail(){
+//         return this.foo.email;
+//     }
 // }
-// new Bam(new Foo(), new Bar());
+// new Bam(new Foo("test@test.com"), new Bar());
 // type Username = {
 //     email : string;
 // };
