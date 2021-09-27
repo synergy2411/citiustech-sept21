@@ -1,3 +1,4 @@
+"use strict";
 // var x : number;
 // x = 100;
 // var y : string ;
@@ -59,10 +60,78 @@
 // var str  = "Some string values";
 // str = 100;
 // Unknown type
-var x;
-x = 100;
-if (x === 100) {
-    var num = x;
-}
-console.log(typeof x);
+// var x : unknown;
+// x = 100;
+// if(x === 100) {
+//     var num : number = x;
+// }
+// console.log(typeof x);
 // undefined type
+// Public - Accessible everywhere
+// Private - Accessible within Class
+// Protected - Self and inherited classes
+// class Student{
+//     // private firstName : string;
+//     // private lastName : string;
+//     age : number;
+//     courses : string[];
+//     constructor(private firstName : string, private lastName : string, age : number){
+//         // this.firstName = firstName;
+//         // this.lastName = lastName;
+//         this.age = age;
+//         this.courses = ["Angular - Awesome framework", "React- Great Library"]
+//     }
+//     getFullName(){
+//         return this.firstName + " " + this.lastName;
+//     }
+// }
+// var foo = new Student("Foo", "Bar", 32)
+// console.log(foo.getFullName())
+// Classes have their own types
+// class Foo{
+// }
+// class Bar {
+// }
+// class Bam{
+//     constructor(private foo : Foo, private bar : Bar){}
+// }
+// new Bam(new Foo(), new Bar());
+// type Username = {
+//     email : string;
+// };
+// type Student = Username & {
+//     age : number;
+// }
+// let foo : Student = {
+//     age : 32,
+//     email : "Test@test.com"
+// }
+// class XYZ implements Username{
+// }
+// interface Human {
+//     firstName : string;
+//     lastName : string;
+//     getFullName() : void;
+// }
+// interface User extends Human{
+//     email : string;
+// }
+// class Person implements User {
+//     constructor(public email : string, public firstName : string, public lastName : string){
+//     }
+//     getFullName(): void {
+//         console.log(this.firstName + " " + this.lastName)
+//     }
+// }
+// var foo = new Person("foo@test.com", "Foo", "Bar");
+// foo.getFullName();
+var Student = /** @class */ (function () {
+    function Student() {
+    }
+    Student.getName = function () {
+        console.log(Student.firstName);
+    };
+    Student.firstName = "Foo";
+    return Student;
+}());
+Student.getName();
