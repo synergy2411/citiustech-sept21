@@ -1,5 +1,5 @@
 // Generics - <> - TypeSafe DataType
-// function display<T, U>(a : T, b : U): void{
+// function display<T, U>(a : T, b : U) : void{
 //     console.log(`A : ${typeof(a)}`)
 //     console.log(`B : ${typeof(b)}`)
 // }

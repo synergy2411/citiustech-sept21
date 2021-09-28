@@ -1,18 +1,17 @@
 // Generic Class
-// class Animal<T,U>{
-//     private legs : T;
-//     private species : U;
-//     constructor(legs : T, species : U){
-//         this.legs = legs;
-//         this.species = species;
-//     }
-//     display(){
-//         console.log(`Legs : ${this.legs}`)
-//         console.log(`Species : ${this.species}`)
-//     }
-// }
-// const tiger = new Animal<number, string>(4, "Tiger")
-// tiger.display();
+var Animal = /** @class */ (function () {
+    function Animal(legs, species) {
+        this.legs = legs;
+        this.species = species;
+    }
+    Animal.prototype.display = function () {
+        console.log("Legs : " + this.legs);
+        console.log("Species : " + this.species);
+    };
+    return Animal;
+}());
+var tiger = new Animal(4, "Tiger");
+tiger.display();
 var Person = /** @class */ (function () {
     function Person(firstName, lastName) {
         this.firstName = firstName;

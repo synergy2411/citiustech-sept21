@@ -1,20 +1,20 @@
 // Generic Class
 
-// class Animal<T,U>{
-//     private legs : T;
-//     private species : U;
-//     constructor(legs : T, species : U){
-//         this.legs = legs;
-//         this.species = species;
-//     }
-//     display(){
-//         console.log(`Legs : ${this.legs}`)
-//         console.log(`Species : ${this.species}`)
-//     }
-// }
+class Animal<T,U>{
+    private legs : T;
+    private species : U;
+    constructor(legs : T, species : U){
+        this.legs = legs;
+        this.species = species;
+    }
+    display(){
+        console.log(`Legs : ${this.legs}`)
+        console.log(`Species : ${this.species}`)
+    }
+}
 
-// const tiger = new Animal<number, string>(4, "Tiger")
-// tiger.display();
+const tiger = new Animal<number, string>(4, "Tiger")
+tiger.display();
 
 
 
