@@ -118,22 +118,22 @@
 // display("test@test.com")
 
 
-let arr = [3,4,5];
-let newArr = [1,2, arr, 6,7,8];         // [1,2,[3,4,5],6,7,8]
-let newArr1 = [1,2, ...arr, 6,7,8];         // [1,2,3,4,5,6,7,8]
+// let arr = [3,4,5];
+// let newArr = [1,2, arr, 6,7,8];         // [1,2,[3,4,5],6,7,8]
+// let newArr1 = [1,2, ...arr, 6,7,8];         // [1,2,3,4,5,6,7,8]
 
-let obj = {
-    firstName : "Foo",
-    lastName : "Bar"
-}
+// let obj = {
+//     firstName : "Foo",
+//     lastName : "Bar"
+// }
 
-let newObj = {
-    ...obj,
-    firstName : "Baz",
-    age : 32
-}
+// let newObj = {
+//     ...obj,
+//     firstName : "Baz",
+//     age : 32
+// }
 
-console.log(newObj);            // {  firstName : "Baz", lastName : "", age : 32 }
+// console.log(newObj);            // {  firstName : "Baz", lastName : "", age : 32 }
 
 
 // Object.assign({}, source, [more source objects])
@@ -156,5 +156,102 @@ console.log(newObj);            // {  firstName : "Baz", lastName : "", age : 32
 
 
 // o Array and object destructing
+
+// Array is indexed/ ordered collection
+// let fruits = ["Apple", "Grapes", "Guava", "Oranges"]
+
+// let  [,, f3, f4, f5] = fruits;
+
+// console.log(f5);            // undefined
+
+
+// Objects are unordered collection, property names
+// let user = {
+//     email : "test@test.com",
+//     age : 32,
+//     isAdmin : true,
+//     address : {
+//         city : "Bengaluru",
+//         street : "201 Main Road, Marathahalli"
+//     }
+// }
+// let newUser = {
+//     email : "test1@test.com",
+//     age : 43
+// }
+// let { email : e1, age : a1 } = newUser;
+// let {age, email, isAdmin, address : { street, city}} = user;
+
+// // let {city, street} = user.address;
+
+// console.log(age);           // 32
+
+
+
+// let user = {
+//     firstName : "Foo",
+//     lastName : "Bar",
+//     address : {
+//         city : "Bengaluru",
+//         street : "201 Main Road, Marathahalli"
+//     },
+//     friends : ["Bam", "Baz"]
+// }
+
+// let {
+//     firstName,
+//     lastName,
+//     address : {
+//         city, 
+//         street
+//     },
+//     friends : [f1, f2]
+// } = user;
+
+
+// let users = [
+//     {email : "test@test.com", age : 32},
+//     {email : "test1@test.com", age : 34},
+//     {email : "test2@test.com", age : 36},
+// ]
+
+// let [
+//     {email : e1, age : a1},
+//     {email : e2, age : a2},
+//     {email : e3, age : a3},
+// ] = users;
+
+
+
+
+
+
+
+
 // o Default Function params
 
+// function demo(email = "default@test.com"){
+//     console.log(email)
+// }
+
+// demo()              // default
+
+// demo("Foo@test.com")        // foo@test.com
+
+
+
+
+// Rest - will take number of parameters; should be last in argument list; works with function parameters
+// Spread - works with collection; creates inidividual elements from collection.
+
+
+// Template String Syntax - without ( + ), `` (back tick)
+// - Multiline string
+// - Embed varibles within string
+
+// let username = "Foo";
+
+// let str = `Hello from ${username},
+// I'm 34 years old.
+// `
+// console.log(str)
