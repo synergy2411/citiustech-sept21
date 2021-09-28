@@ -13,4 +13,6 @@ let foobar = new Human();
 
 console.log(foobar.getMyLuckyNumber());
 console.log(foobar.getDailyFortune());
-console.log("MAGIC NUMBER : ", FortuneUtil.MAGIC_NUMBER);
+// console.log("MAGIC NUMBER : ", FortuneUtil.MAGIC_NUMBER);
+
+let theTiger = new FortuneUtil.Animal();

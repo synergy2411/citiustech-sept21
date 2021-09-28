@@ -2,6 +2,7 @@
 // - logical grouping of inter-related functionality
 // - function, classes, const etc
 // - avoids global pollution in app
+/// <reference path="./magicNumber.ts" />
 var FortuneUtil;
 (function (FortuneUtil) {
     function getFortune() {
@@ -9,8 +10,13 @@ var FortuneUtil;
     }
     FortuneUtil.getFortune = getFortune;
     function getLuckyNumber() {
-        return Math.round(Math.random() * 100);
+        return MagicNumber.MAGIC_NUMBER;
     }
     FortuneUtil.getLuckyNumber = getLuckyNumber;
-    FortuneUtil.MAGIC_NUMBER = Math.round(Math.random() * 100);
+    var Animal = /** @class */ (function () {
+        function Animal() {
+        }
+        return Animal;
+    }());
+    FortuneUtil.Animal = Animal;
 })(FortuneUtil || (FortuneUtil = {}));

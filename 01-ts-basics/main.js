@@ -13,4 +13,5 @@ var Human = /** @class */ (function () {
 var foobar = new Human();
 console.log(foobar.getMyLuckyNumber());
 console.log(foobar.getDailyFortune());
-console.log("MAGIC NUMBER : ", FortuneUtil.MAGIC_NUMBER);
+// console.log("MAGIC NUMBER : ", FortuneUtil.MAGIC_NUMBER);
+var theTiger = new FortuneUtil.Animal();
