@@ -20,3 +20,34 @@
 # to generate typescript.json 
 > npx tsc --init
 
+
+
+# Angular building blocks
+- Components : creates the UI; reusable
+- Directives : special markers on UI - ngFor, ngIf, ngClass, ngStyle, ngSwitch, Custom directives
+- Pipes : Data transformation; Readable format; Data Format; formatting UI etc uppercase, lowercase, currency, json, date, async, percent; Custom pipes
+- Services : DI, State Management; Singleton; Component interaction using services
+- Modules : Container for inter-related code; encapsulation; plugable; 
+
+@Component()
+@Directive()
+@Pipe()
+@NgModule()
+@Injectable()
+export class User{}
+
+
+# Install Angular CLI Tool
+> npm install @angular/cli@11 -g
+> ng v
+> ng new users-app
+> cd users-app
+> ng serve --hmr -> http://localhost:4200
+
+
+- Atomic property for Web page
+> Atoms : Smallest unit; reusable
+> Molecules :
+> Organism : 
+> Templates : 
+> Pages
