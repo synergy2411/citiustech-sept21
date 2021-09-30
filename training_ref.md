@@ -51,3 +51,14 @@ export class User{}
 > Organism : 
 > Templates : 
 > Pages
+
+# to install Bootstrap 
+> npm install bootstrap@4
+
+# ng Commands
+- ng generate component path/to/comp/ComponentName
+- ng g c componentName
+- ng g d directiveName
+- ng g p pipeNAme
+- ng g m moduleNAme
+- ng g s serviceName

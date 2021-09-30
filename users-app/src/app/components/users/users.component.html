@@ -1,8 +1,19 @@
+<div class="container">
 <h5>Users component loaded successfully.</h5>
 
-<ul>
-  <li>
-    <p [innerHTML]="user.firstName"></p>
-    {{ user.lastName }}
+<ul class="list-group">
+  <li class="list-group-item">
+    <div class="row">
+      <div class="col-md-3 col-sm-3">
+        <!-- UserImage Comp -->
+        <app-user-image [user]="user"
+          (childEvent)="onMoreInfo($event)" ></app-user-image>
+      </div>
+      <div class="col-md-9 col-sm-9">
+        <!-- UserInfo Comp -->
+        <app-user-info [user]="user"></app-user-info>
+      </div>
+    </div>
   </li>
 </ul>
+</div>
