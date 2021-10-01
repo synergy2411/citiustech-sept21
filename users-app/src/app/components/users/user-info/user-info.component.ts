@@ -10,4 +10,6 @@ export class UserInfoComponent{
 
   @Input() user: User;
 
+  tab : number = 1;
+
 }

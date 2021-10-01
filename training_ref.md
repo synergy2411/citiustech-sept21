@@ -82,3 +82,24 @@ export class User{}
 - Components : Data / Content Projection, Life cycle hooks/methods
 - Directives : Attribute (ngClass, ngStyle) , structural (ngIf, ngFor, ngSwitch)
 - note-app
+
+
+- ViewChild - always takes the first occurance of element
+    : access the DOM element reference into class - #ref
+    : acces the child component
+- ViewChildren - List of all children
+- ContentChild - to access projected content
+- ContentChildren
+
+- ng g c practice/components/decorators-demo
+
+- Smart | Container | Parent : contains other component as well as business logic
+- Dump | Presentational | Child : receives the data from parent to create the UI.
+
+- Users Comp (Smart)
+    - UserImage (Dump)
+    - UserInfo (Dump)
+
+# Life Cycle Methods:
+- ViewChild / ViewChildren : can access the template element after the view initialize (ngAfterViewInit)
+- ContentChild / ContentChildren : can acces the projected contents after the content initialize (ngAfterContentInit)

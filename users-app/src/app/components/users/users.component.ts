@@ -8,14 +8,14 @@ import { USER_DATA } from '../../model/mocks';
 })
 export class UsersComponent implements OnInit{
 
-  user : User;
+  users : User[];
 
   constructor(){
     // this.user = USER_DATA;
   }
 
   ngOnInit(){
-    this.user = USER_DATA;
+    this.users = USER_DATA;
   }
 
   onMoreInfo(evt : User){

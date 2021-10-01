@@ -1,5 +1,12 @@
 <h5>{{ user.firstName }} {{ user.lastName }}</h5>
-<p>Income : <span [innerText]="user.income"></span></p>
+<p *ngIf="user.isWorking; else elseTemplate">Income : <span [innerText]="user.income"></span></p>
+
+<!-- Desugar ngIF -->
+
+<!-- <ng-template [ngIf]="user.isWorking">
+  <p>Income : {{ user.income }}</p>
+</ng-template> -->
+
 <p>Date of Birth : {{ user.dob }}</p>
 <p>
   Totel Votes : {{ user.votes }}
@@ -16,3 +23,38 @@
     (ngModelChange)="user.votes = $event"
   />
 </p>
+
+<ng-template #elseTemplate>
+  <p>Mr. {{user.lastName}} is NOT working now</p>
+</ng-template>
+
+<ul class="nav nav-tabs">
+  <li class="nav-item">
+    <a class="nav-link" (click)="tab=1">Comments</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" (click)="tab=2">Add Comments</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" (click)="tab=3">Description</a>
+  </li>
+</ul>
+
+<div [ngSwitch]="tab">
+  <div *ngSwitchCase="1">
+    <div *ngIf="user.comments.length>0; else noCommentTemplate">
+      <ul class="list-group">
+        <li class="list-group-item" *ngFor="let comment of user.comments">
+          Stars : {{ comment.stars}}
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div *ngSwitchCase="2">Comment Form coming soon ....</div>
+  <div *ngSwitchCase="3">Upcoming description</div>
+  <div *ngSwitchDefault>Default Value</div>
+</div>
+
+<ng-template #noCommentTemplate>
+  <p>Be the first to comment!</p>
+</ng-template>
