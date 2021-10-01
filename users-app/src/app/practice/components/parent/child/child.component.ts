@@ -7,7 +7,7 @@ import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
 })
 export class ChildComponent{
 
-  @Input() title : string;
+  @Input() title : string | undefined;
   @Input() user : any;
 
   value : string;

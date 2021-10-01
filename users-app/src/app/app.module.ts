@@ -8,6 +8,8 @@ import { UserInfoComponent } from './components/users/user-info/user-info.compon
 import { UserImageComponent } from './components/users/user-image/user-image.component';
 import { ParentComponent } from './practice/components/parent/parent.component';
 import { ChildComponent } from './practice/components/parent/child/child.component';
+import { DecoratorsDemoComponent } from './practice/components/decorators-demo/decorators-demo.component';
+import { ChildDemoComponent } from './practice/components/decorators-demo/child-demo/child-demo.component';
 
 @NgModule({
   declarations: [           // Custom component, directives, pipes
@@ -16,7 +18,9 @@ import { ChildComponent } from './practice/components/parent/child/child.compone
     UserInfoComponent,
     UserImageComponent,
     ParentComponent,
-    ChildComponent
+    ChildComponent,
+    DecoratorsDemoComponent,
+    ChildDemoComponent
 
   ],
   imports: [                // Built-in & Custom Module
