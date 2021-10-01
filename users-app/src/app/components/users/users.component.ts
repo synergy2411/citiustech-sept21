@@ -9,6 +9,7 @@ import { USER_DATA } from '../../model/mocks';
 export class UsersComponent implements OnInit{
 
   users : User[];
+  tab : number = 1;
 
   constructor(){
     // this.user = USER_DATA;
