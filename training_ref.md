@@ -62,3 +62,23 @@ export class User{}
 - ng g p pipeNAme
 - ng g m moduleNAme
 - ng g s serviceName
+
+
+
+- Creating angular Project
+- Angular Bootstrap Process
+- Component creation
+- Property Binding + Event Binding
+- 2 Way Data Binding / [(ngModel)]
+- Parent / Child Communication
+
+
+# Full day
+- First break : 11:30 (20 minutes)
+- Second break : 1:30 (60 minutes)
+- Third break : 4:00 (20 minutes)
+
+
+- Components : Data / Content Projection, Life cycle hooks/methods
+- Directives : Attribute (ngClass, ngStyle) , structural (ngIf, ngFor, ngSwitch)
+- note-app
