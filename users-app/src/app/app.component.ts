@@ -15,5 +15,6 @@ import { Component } from '@angular/core';
 })
 
 export class AppComponent {
-
+  title = "The Awesome App";
+  showComp = true;
 }

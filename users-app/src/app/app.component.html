@@ -1,7 +1,15 @@
 <div class="container">
 <h4>Hello Angular!!!</h4>
 
-<app-decorators-demo></app-decorators-demo>
+<input type="text" [(ngModel)]="title">
+
+<button (click)="showComp=!showComp">Toggle Comp</button>
+
+<app-life-cycle-demo *ngIf="showComp" [title]="title">
+  <h5 #heading>This is projected from Parent</h5>
+</app-life-cycle-demo>
+
+<!-- <app-decorators-demo></app-decorators-demo> -->
 
 <!-- <app-parent></app-parent> -->
 
