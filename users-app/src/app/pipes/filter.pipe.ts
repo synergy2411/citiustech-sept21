@@ -21,3 +21,15 @@ export class FilterPipe implements PipeTransform {
 }
 
 // Create a pipe which will sort the array values
+
+// transform(todoColl: any[], order : string){
+
+//   if(order === 'ASC'){
+//     todoColl.sort((a,b) => a.label - b.label)
+//   }else if (order === 'DESC') {
+//     todoColl.sort((a,b) => b.label - a.label)
+//   }else{
+//     return todoColl;
+//   }
+
+// }

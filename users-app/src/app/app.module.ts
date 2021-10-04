@@ -20,6 +20,7 @@ import { UnlessDirective } from './directives/unless.directive';
 import { PipeDemoComponent } from './practice/components/pipe-demo/pipe-demo.component';
 import { NationalCodePipe } from './pipes/national-code.pipe';
 import { FilterPipe } from './pipes/filter.pipe';
+import { SortPipe } from './pipes/sort.pipe';
 
 @NgModule({
   declarations: [           // Custom component, directives, pipes
@@ -40,7 +41,8 @@ import { FilterPipe } from './pipes/filter.pipe';
     UnlessDirective,
     PipeDemoComponent,
     NationalCodePipe,
-    FilterPipe
+    FilterPipe,
+    SortPipe
   ],
   imports: [                // Built-in & Custom Module
     BrowserModule,

@@ -17,6 +17,7 @@ export class PipeDemoComponent implements OnInit {
   contactNumber = 987654321;
 
   filteredStatus = '';
+  sortOrder : string;
 
   todoCollection = [
     {label : "grocery", status : "done"},
