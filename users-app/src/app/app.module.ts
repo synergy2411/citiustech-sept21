@@ -13,6 +13,7 @@ import { ChildDemoComponent } from './practice/components/decorators-demo/child-
 import { LifeCycleDemoComponent } from './practice/components/life-cycle-demo/life-cycle-demo.component';
 import { UserCommentComponent } from './components/users/user-comment/user-comment.component';
 import { AttributeDemoComponent } from './practice/components/attribute-demo/attribute-demo.component';
+import { HighlightDirective } from './directives/highlight.directive';
 
 @NgModule({
   declarations: [           // Custom component, directives, pipes
@@ -26,7 +27,8 @@ import { AttributeDemoComponent } from './practice/components/attribute-demo/att
     ChildDemoComponent,
     LifeCycleDemoComponent,
     UserCommentComponent,
-    AttributeDemoComponent
+    AttributeDemoComponent,
+    HighlightDirective
   ],
   imports: [                // Built-in & Custom Module
     BrowserModule,
