@@ -103,3 +103,50 @@ export class User{}
 # Life Cycle Methods:
 - ViewChild / ViewChildren : can access the template element after the view initialize (ngAfterViewInit)
 - ContentChild / ContentChildren : can acces the projected contents after the content initialize (ngAfterContentInit)
+
+
+
+- Adding Stars using Font-Awesome
+
+- Attribute Directive
+    : ngClass - dynamically add/remove CSS Classes
+        - Array : CSS Classes
+        - Object : Property name as CSS Class {'feature' : false}
+    : ngStyle - dynamically add/remove CSS styles
+
+
+- @HostBinding - Binds the host element property with the Class model
+    : <h2 appHighlight> </h2>
+- @HostListener - Listens to the event triggered on Host Element and binds it to class methods
+- ElementRef : reference of DOM Element
+- Renderer2 : Access to DOM
+
+- Structural Directive : templates <ng-template>
+    : TemplateRef - reference of DOM Template
+    : ViewContainerRef - Container for Template
+
+    <div>
+        <p> This is paragraph </p>
+    </div>
+
+    - Create the Custom structural directive which will perform opposite of 'ngIf'
+
+
+- Async Pipe
+
+# Async JavaScript 
+- Callbacks
+- Promises
+- Async...Await
+- Observables using RxJS
+- Async Pipe
+
+- Impure Pipe => both pure and impure (mutable and immutable changes)
+    : array.push()
+    : user.name = ""
+- Pure Pipe => pure change (immutable changes)
+    : array = []
+    : user = {name : ""}
+
+
+# Notes App
