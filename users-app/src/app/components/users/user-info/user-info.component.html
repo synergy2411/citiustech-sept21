@@ -13,11 +13,11 @@
 <p>Date of Birth : {{ user.dob | date : 'dd/MM/yyyy'}}</p>
 <p>
   Totel Votes : {{ user.votes }}
-  <input
+  <!-- <input
     type="number"
     [value]="user.votes"
-    (change)="user.votes = $event.target.value"
-  />
+    (change)="user.votes = $event.target.value" /> -->
+
   <!-- <input type="number" [(ngModel)]="user.votes"> -->
   <!-- Desugar [(ngModel)] -->
   <input

@@ -18,6 +18,7 @@ import { DelayDirective } from './directives/delay.directive';
 import { StructuralDemoComponent } from './practice/components/structural-demo/structural-demo.component';
 import { UnlessDirective } from './directives/unless.directive';
 import { PipeDemoComponent } from './practice/components/pipe-demo/pipe-demo.component';
+import { NationalCodePipe } from './pipes/national-code.pipe';
 
 @NgModule({
   declarations: [           // Custom component, directives, pipes
@@ -36,7 +37,8 @@ import { PipeDemoComponent } from './practice/components/pipe-demo/pipe-demo.com
     DelayDirective,
     StructuralDemoComponent,
     UnlessDirective,
-    PipeDemoComponent
+    PipeDemoComponent,
+    NationalCodePipe
   ],
   imports: [                // Built-in & Custom Module
     BrowserModule,

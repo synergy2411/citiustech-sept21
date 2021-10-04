@@ -14,6 +14,7 @@ export class PipeDemoComponent implements OnInit {
     }, 4000);
   })
 
+  contactNumber = 987654321;
 
   constructor() { }
 

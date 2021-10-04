@@ -10,7 +10,7 @@ export class UserCommentComponent implements OnInit {
 
   @Input() comments: Comment[];
 
-  tab = 0;
+  tab = 1;
 
   constructor() { }
 
