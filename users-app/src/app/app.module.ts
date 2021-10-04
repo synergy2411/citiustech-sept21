@@ -14,6 +14,9 @@ import { LifeCycleDemoComponent } from './practice/components/life-cycle-demo/li
 import { UserCommentComponent } from './components/users/user-comment/user-comment.component';
 import { AttributeDemoComponent } from './practice/components/attribute-demo/attribute-demo.component';
 import { HighlightDirective } from './directives/highlight.directive';
+import { DelayDirective } from './directives/delay.directive';
+import { StructuralDemoComponent } from './practice/components/structural-demo/structural-demo.component';
+import { UnlessDirective } from './directives/unless.directive';
 
 @NgModule({
   declarations: [           // Custom component, directives, pipes
@@ -28,7 +31,10 @@ import { HighlightDirective } from './directives/highlight.directive';
     LifeCycleDemoComponent,
     UserCommentComponent,
     AttributeDemoComponent,
-    HighlightDirective
+    HighlightDirective,
+    DelayDirective,
+    StructuralDemoComponent,
+    UnlessDirective
   ],
   imports: [                // Built-in & Custom Module
     BrowserModule,

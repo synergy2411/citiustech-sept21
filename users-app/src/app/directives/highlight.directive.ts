@@ -17,7 +17,7 @@ export class HighlightDirective{
     // console.log("Who's this");
     // this.bgColor = 'grey';
     let entries = Object.entries(this.myProp)
-    console.log(entries);
+    // console.log(entries);
     entries.forEach(([key, value]) => {
       this.renderer.setStyle(this.elRef.nativeElement, key, value)
     })
