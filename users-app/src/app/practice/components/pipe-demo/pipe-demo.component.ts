@@ -16,6 +16,15 @@ export class PipeDemoComponent implements OnInit {
 
   contactNumber = 987654321;
 
+  filteredStatus = '';
+
+  todoCollection = [
+    {label : "grocery", status : "done"},
+    {label : "shopping", status : "pending"},
+    {label : "insurance", status : "done"},
+    {label : "planting", status : "pending"},
+  ]
+
   constructor() { }
 
   ngOnInit(): void {

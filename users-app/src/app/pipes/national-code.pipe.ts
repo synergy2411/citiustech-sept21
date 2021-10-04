@@ -18,3 +18,5 @@ export class NationalCodePipe implements PipeTransform{
 
 // Create reverse pipe to reverse the string
 //  abcxyz -> zyxcba
+
+// return value.split('').reverse().join('')

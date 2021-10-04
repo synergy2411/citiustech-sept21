@@ -19,6 +19,7 @@ import { StructuralDemoComponent } from './practice/components/structural-demo/s
 import { UnlessDirective } from './directives/unless.directive';
 import { PipeDemoComponent } from './practice/components/pipe-demo/pipe-demo.component';
 import { NationalCodePipe } from './pipes/national-code.pipe';
+import { FilterPipe } from './pipes/filter.pipe';
 
 @NgModule({
   declarations: [           // Custom component, directives, pipes
@@ -38,7 +39,8 @@ import { NationalCodePipe } from './pipes/national-code.pipe';
     StructuralDemoComponent,
     UnlessDirective,
     PipeDemoComponent,
-    NationalCodePipe
+    NationalCodePipe,
+    FilterPipe
   ],
   imports: [                // Built-in & Custom Module
     BrowserModule,
