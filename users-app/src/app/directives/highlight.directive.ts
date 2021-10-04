@@ -10,13 +10,17 @@ export class HighlightDirective{
   bgColor : any;
 
   @Input() favColor : string;
-  @Input() myProp : {border : string};
+  @Input() myProp : any;
 
   @HostListener('mouseenter')
   onmouseenter(){
     // console.log("Who's this");
     // this.bgColor = 'grey';
-    this.renderer.setStyle(this.elRef.nativeElement, 'border', this.myProp.border)
+    let entries = Object.entries(this.myProp)
+    console.log(entries);
+    entries.forEach(([key, value]) => {
+      this.renderer.setStyle(this.elRef.nativeElement, key, value)
+    })
     this.renderer.setStyle(this.elRef.nativeElement, 'backgroundColor', this.favColor)
   }
 
