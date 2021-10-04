@@ -12,6 +12,7 @@ import { DecoratorsDemoComponent } from './practice/components/decorators-demo/d
 import { ChildDemoComponent } from './practice/components/decorators-demo/child-demo/child-demo.component';
 import { LifeCycleDemoComponent } from './practice/components/life-cycle-demo/life-cycle-demo.component';
 import { UserCommentComponent } from './components/users/user-comment/user-comment.component';
+import { AttributeDemoComponent } from './practice/components/attribute-demo/attribute-demo.component';
 
 @NgModule({
   declarations: [           // Custom component, directives, pipes
@@ -24,7 +25,8 @@ import { UserCommentComponent } from './components/users/user-comment/user-comme
     DecoratorsDemoComponent,
     ChildDemoComponent,
     LifeCycleDemoComponent,
-    UserCommentComponent
+    UserCommentComponent,
+    AttributeDemoComponent
   ],
   imports: [                // Built-in & Custom Module
     BrowserModule,
