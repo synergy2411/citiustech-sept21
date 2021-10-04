@@ -1,11 +1,13 @@
 import { Pipe, PipeTransform } from '@angular/core';
 
 @Pipe({
-  name: 'filter'
+  name: 'filter',
+  // pure : false
 })
 export class FilterPipe implements PipeTransform {
 
   transform(value: Array<{label : string, status : string}>, filteredStatus : string): Array<{label : string, status : string}> | null {
+    console.log("[TRANSFORM]")
     if(value.length > 0 && filteredStatus === ''){
       return value;
     }

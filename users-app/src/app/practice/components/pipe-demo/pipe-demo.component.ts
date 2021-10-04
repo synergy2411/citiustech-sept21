@@ -26,6 +26,19 @@ export class PipeDemoComponent implements OnInit {
     {label : "planting", status : "pending"},
   ]
 
+  onAddItem(){
+    // Impure Change
+    // this.todoCollection.push({label : "New Task", status : "pending"})
+    // Pure Change
+    this.todoCollection = [
+      {label : "grocery", status : "done"},
+      {label : "shopping", status : "pending"},
+      {label : "insurance", status : "done"},
+      {label : "planting", status : "pending"},
+      {label : "New Item", status : "pending"}
+    ]
+
+  }
   constructor() { }
 
   ngOnInit(): void {

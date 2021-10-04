@@ -20,6 +20,7 @@
   </div>
 </div>
 <br><br>
+<button class="btn btn-primary" (click)="onAddItem()">Add New Item</button>
 <ul class="list-group">
   <li class="list-group-item"
     *ngFor="let todo of todoCollection| filter: filteredStatus | sort : sortOrder">

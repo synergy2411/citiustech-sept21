@@ -5,7 +5,6 @@ import { Pipe, PipeTransform } from '@angular/core';
 })
 export class SortPipe implements PipeTransform {
   transform(todoColl: any[], order: string) {
-    console.log(todoColl, order);
     if (order === 'ASC') {
       return todoColl.sort((a, b) => {
         let labelA = a.label.toLowerCase();
