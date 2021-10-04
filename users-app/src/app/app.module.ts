@@ -17,6 +17,7 @@ import { HighlightDirective } from './directives/highlight.directive';
 import { DelayDirective } from './directives/delay.directive';
 import { StructuralDemoComponent } from './practice/components/structural-demo/structural-demo.component';
 import { UnlessDirective } from './directives/unless.directive';
+import { PipeDemoComponent } from './practice/components/pipe-demo/pipe-demo.component';
 
 @NgModule({
   declarations: [           // Custom component, directives, pipes
@@ -34,7 +35,8 @@ import { UnlessDirective } from './directives/unless.directive';
     HighlightDirective,
     DelayDirective,
     StructuralDemoComponent,
-    UnlessDirective
+    UnlessDirective,
+    PipeDemoComponent
   ],
   imports: [                // Built-in & Custom Module
     BrowserModule,
