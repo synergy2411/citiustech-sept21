@@ -150,3 +150,22 @@ export class User{}
 
 
 # Notes App
+
+
+
+- Forms
+    : Template driven
+    : Model driven / Reactive Forms
+    - State and Classes to Form / Form Controls
+     : ngTouched | ngUntouched
+     : ngValid | ngInvalid
+     : ngPristine | ngDirty
+
+
+- Services : implements DI; Singleton; client-side business logic
+    : DI - Design Pattern; loosely coupled; reusability; 
+    : Singleton - Only one instance; Design pattern; Shared the same instance within the scope
+    - Service provided in Root Module -> Singleton instance will be available application-wide
+    - Service provided in Any Component -> Override the previous DI tree, creates new scope for service; Singleton instance will be applicable to self as well as child component, but NOT in other services.
+
+- RxJS
