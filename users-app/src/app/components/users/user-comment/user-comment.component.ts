@@ -17,4 +17,9 @@ export class UserCommentComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  onAddItem(comment : Comment){
+    this.comments.push(comment);
+    this.tab= 1;
+  }
+
 }
