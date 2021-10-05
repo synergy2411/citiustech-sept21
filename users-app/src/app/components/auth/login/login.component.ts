@@ -15,5 +15,8 @@ export class LoginComponent implements OnInit {
   onLogin(f : NgForm){
     console.log(f)
   }
+  onReset(f: NgForm){
+    f.reset()
+  }
 
 }

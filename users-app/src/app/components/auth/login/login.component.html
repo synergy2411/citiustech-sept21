@@ -34,13 +34,16 @@
                   <div class="row">
                     <div class="col-6">
                       <button class="btn btn-success btn-block"
-                        (click)="onLogin(f)">Submit</button>
+                        (click)="onLogin(f)"
+                        [disabled]="f.invalid">Submit</button>
                     </div>
                     <div class="col-6">
-                      <button class="btn btn-warning btn-block">Reset</button>
+                      <button class="btn btn-warning btn-block"
+                       (click)="onReset(f)">Reset</button>
                     </div>
                   </div>
                 </div>
+                <!-- Form Status : {{ f.valid }} -->
               </form>
             </div>
           </div>
