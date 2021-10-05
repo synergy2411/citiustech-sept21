@@ -14,7 +14,7 @@
                 <input type="text"
                   name="username"
                   class="form-control"
-                  [formControl]="username">
+                  [formControl]="username" readonly>
 
                   <div [hidden]="username.valid || username.untouched">
                     <div [hidden]="!username.hasError('required')" class="alert alert-danger">
@@ -46,9 +46,45 @@
               </div>
 
               <!-- Select drop/down -->
-              <!-- Checkbox -->
-              <!-- Radio button -->
+              <div class="row">
+                <div class="col-4"><b>Country : </b></div>
+                <div class="col-8">
+                  <select name="countries" formControlName="country" class="form-control">
+                    <option *ngFor="let country of countries" value="{{country}}">
+                      {{ country | uppercase }} </option>
+                  </select>
+                </div>
+              </div>
 
+              <!-- Radio button -->
+              <div class="form-group">
+                <b>Select Role :</b>
+              <div class="form-check">
+                <input type="radio" name="role"
+                  class="form-check-input"
+                  id="admin"
+                  value="admin"
+                  formControlName="role">
+                <label for="admin">Admin</label>
+              </div>
+              <div class="form-check">
+                <input type="radio" name="role"
+                  class="form-check-input"
+                  id="employee"
+                  value="employee"
+                  formControlName="role">
+                <label for="employee">Employee</label>
+              </div>
+            </div>
+
+
+            <!-- Checkbox -->
+            <div class="form-group">
+            <div class="form-check">
+              <input type="checkbox" class="form-check-input" name="tnc" id="tnc" formControlName="tnc">
+              <label for="tnc" class="form-check-label">I agree with T&C</label>
+            </div>
+          </div>
 
               <!-- Buttons -->
               <div class="row">

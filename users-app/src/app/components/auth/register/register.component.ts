@@ -8,6 +8,7 @@ import { FormControl, FormGroup, FormBuilder, Validators, ValidationErrors, Abst
 })
 export class RegisterComponent implements OnInit {
 
+
   username = new FormControl('',[
     Validators.required,
     Validators.email
@@ -17,12 +18,17 @@ export class RegisterComponent implements OnInit {
     Validators.minLength(6),
     this.hasExclamation('@')
   ]);
+
   registerForm : FormGroup;
+  countries = ["india", "australia","france", "USA"]
 
   constructor(private fb : FormBuilder) {
     this.registerForm = this.fb.group({
       username : this.username,
-      password : this.password
+      password : this.password,
+      role : new FormControl('', Validators.required),
+      country : new FormControl('', Validators.required),
+      tnc : new FormControl('')
     })
   }
 
