@@ -39,6 +39,9 @@
                     <div [hidden]="!password.hasError('minlength')" class="alert alert-danger">
                       <p>* Password must have 6 characters at least.</p>
                     </div>
+                    <div [hidden]="!password.hasError('exclamationError')" class="alert alert-danger">
+                      <p>* Password must contain Exclamation mark.</p>
+                    </div>
                   </div>
               </div>
               <!-- Buttons -->
