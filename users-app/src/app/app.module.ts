@@ -24,6 +24,9 @@ import { SortPipe } from './pipes/sort.pipe';
 import { LoginComponent } from './components/auth/login/login.component';
 import { CommentFormComponent } from './components/user/user-comment/comment-form/comment-form.component';
 import { RegisterComponent } from './components/auth/register/register.component';
+import { DataService } from './services/data.service';
+import { CtrOneComponent } from './practice/components/ctr-one/ctr-one.component';
+import { CtrTwoComponent } from './practice/components/ctr-two/ctr-two.component';
 
 @NgModule({
   declarations: [           // Custom component, directives, pipes
@@ -48,14 +51,16 @@ import { RegisterComponent } from './components/auth/register/register.component
     SortPipe,
     LoginComponent,
     CommentFormComponent,
-    RegisterComponent
+    RegisterComponent,
+    CtrOneComponent,
+    CtrTwoComponent
   ],
   imports: [                // Built-in & Custom Module
     BrowserModule,
     FormsModule,
     ReactiveFormsModule
   ],
-  providers: [],            // services
+  providers: [DataService],            // services
   bootstrap: [AppComponent]
 })
 export class AppModule { }
