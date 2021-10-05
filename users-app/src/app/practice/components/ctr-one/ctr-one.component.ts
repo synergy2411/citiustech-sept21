@@ -4,7 +4,8 @@ import { DataService } from 'src/app/services/data.service';
 @Component({
   selector: 'app-ctr-one',
   templateUrl: './ctr-one.component.html',
-  styleUrls: ['./ctr-one.component.css']
+  styleUrls: ['./ctr-one.component.css'],
+  providers:  [DataService]
 })
 export class CtrOneComponent implements OnInit {
 
