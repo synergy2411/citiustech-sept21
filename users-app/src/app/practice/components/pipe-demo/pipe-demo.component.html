@@ -25,7 +25,7 @@
   <li class="list-group-item"
     *ngFor="let todo of todoCollection| filter: filteredStatus | sort : sortOrder">
     <p class="lead">
-      {{ todo.label | uppercase }}
+      {{ todo.label | titlecase}}
       <span class="badge badge-success float-right">
         {{ todo.status }}
       </span>
