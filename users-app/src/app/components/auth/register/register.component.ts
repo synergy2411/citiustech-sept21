@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup, FormBuilder, Validators, ValidationErrors, AbstractControl } from '@angular/forms';
+import { FormControl, FormGroup, FormBuilder, Validators, ValidationErrors, AbstractControl, ValidatorFn } from '@angular/forms';
 
 @Component({
   selector: 'app-register',
@@ -15,7 +15,7 @@ export class RegisterComponent implements OnInit {
   password = new FormControl('', [
     Validators.required,
     Validators.minLength(6),
-    this.hasExclamation
+    this.hasExclamation('@')
   ]);
   registerForm : FormGroup;
 
@@ -26,9 +26,11 @@ export class RegisterComponent implements OnInit {
     })
   }
 
-  hasExclamation(control : AbstractControl) : ValidationErrors | null {
-    const exclamation = control.value.indexOf('!') >= 0
-    return exclamation ? null : {"exclamationError": true};
+  hasExclamation(symbol: string) : ValidatorFn {
+    return function(control : AbstractControl) : ValidationErrors | null{
+      const exclamation = control.value.indexOf(symbol) >= 0
+      return exclamation ? null : {"exclamationError": true};
+    }
   }
 
   onRegister(){
