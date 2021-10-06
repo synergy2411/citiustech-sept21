@@ -153,19 +153,89 @@ export class User{}
 
 
 
-- Forms
-    : Template driven
-    : Model driven / Reactive Forms
+# Forms
+    : Template driven -> "ngForm"
+    : Model driven / Reactive Forms -> FormControl, FormGroup FormBuilder
     - State and Classes to Form / Form Controls
      : ngTouched | ngUntouched
      : ngValid | ngInvalid
      : ngPristine | ngDirty
 
 
-- Services : implements DI; Singleton; client-side business logic
+# Services : implements DI; Singleton; client-side business logic
     : DI - Design Pattern; loosely coupled; reusability; 
     : Singleton - Only one instance; Design pattern; Shared the same instance within the scope
     - Service provided in Root Module -> Singleton instance will be available application-wide
     - Service provided in Any Component -> Override the previous DI tree, creates new scope for service; Singleton instance will be applicable to self as well as child component, but NOT in other services.
+    : Self Injected Service - Tree-shakable; Will NOT become the part of final buil, if not utilized in App
+    : Platform Injection - All angular app running on browser will receive the same singleton instance
 
-- RxJS
+
+
+
+
+- RxJS Library : Async Tasks | Observable
+
+- Observable : stream on which data flow at certain time interval
+
+- Promises vs Observables
+    : Promises 
+        - Handle one value at a time
+        - Eagerly consumed
+        - Always executed Asynchronously
+        - Are NOT Cancelable
+        - Promise chain hell
+        - Are One shot
+
+    : Observables 
+        - handles multiple value
+        - executes when subscribe; Lazily consumed
+        - Async and Sync 
+        - Can Cancel / Unsubscribe in between; 
+        - Operators (Creational, Filtering, Tranformation, Utility, Error handling etc)
+        - Flatten the chain
+        - Observe the data source
+
+  # Creational Operators
+    // - from : creates observable from Array, Promise
+    // - of : creates observable from supplied arguments
+    // - range : creates observable with certain range
+    // - timer : creates observable by emitting data after certain duration
+    // - fromEvent : creates observable from an event
+    // - new Observable() : creates observable from scratch
+    // - ajax : creates observable by making remote server call (Ajax call)
+
+# Transformation Operators
+    - map
+    - switchMap
+    - concatMap
+    - mergeMap
+
+# Filtering Operators
+    - pluck
+    - filter
+    - reduce
+    - take(n) : takes only n elements
+    - takeWhile : takes all elements till the time condition is true
+    - takeUntil : takes all element till the next observable finish it.
+    - debounceTime(ms) : emits the last value after given time in ms.
+    - sampleTime(ms) : emits data for specified time interval
+    - auditTime : emits after specified time.
+    - throttleTime : emits data without delay and then after specified time.
+
+# Joining Operators
+    - ForkJoin
+    - CombineLatest
+
+# Utility Operators
+    - tap
+    - throwError
+    - delay
+    
+# Subject
+
+
+
+
+
+- Http Calls / HttpClientModule -> Remote Server Call (GET, POST, PATCH, DELETE)
