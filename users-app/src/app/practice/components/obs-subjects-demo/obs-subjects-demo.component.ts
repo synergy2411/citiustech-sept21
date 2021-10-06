@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { BehaviorSubject, Subject } from 'rxjs';
+import { BehaviorSubject, ReplaySubject, Subject } from 'rxjs';
 
 @Component({
   selector: 'app-obs-subjects-demo',
@@ -12,14 +12,27 @@ export class ObsSubjectsDemoComponent implements OnInit {
 
   ngOnInit(): void {
 
-    const sub = new BehaviorSubject(101);
-    sub.subscribe(val => console.log("SUB 1 : ", val))
+    // REPLAY SUBJECT
+    const subject = new ReplaySubject(2);
 
-    sub.next(201)
+    subject.next(101)
+    subject.next(201)
+    subject.next(301)
 
-    sub.subscribe(val => console.log("SUB 2 : ", val))
+    subject.subscribe(val => console.log("SUBS 1 : ", val))
+    subject.next(401)
+    subject.subscribe(val => console.log("SUBS 2 : ", val))
 
 
+    // BEHAVIOUR SUBJECT
+    // const sub = new BehaviorSubject(101);
+    // sub.subscribe(val => console.log("SUB 1 : ", val))
+
+    // sub.next(201)
+
+    // sub.subscribe(val => console.log("SUB 2 : ", val))
+
+    // SUBJECT
     // const subject = new Subject()
 
     // subject.subscribe(val => console.log("SUB 1 : ", val))
