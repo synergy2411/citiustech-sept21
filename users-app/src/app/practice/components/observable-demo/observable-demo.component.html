@@ -4,3 +4,12 @@
 
 <button (click)="onSubscribe()" class="btn btn-primary">Subscribe</button>
 <button (click)="onUnsubscribe()" class="btn btn-dark">Unsubscribe</button>
+
+
+<hr>
+
+<ul>
+  <li *ngFor="let pkg of packages">
+    {{pkg}}
+  </li>
+</ul>

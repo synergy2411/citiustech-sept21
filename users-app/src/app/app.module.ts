@@ -29,6 +29,7 @@ import { CtrOneComponent } from './practice/components/ctr-one/ctr-one.component
 import { CtrTwoComponent } from './practice/components/ctr-two/ctr-two.component';
 import { AsyncDemoComponent } from './practice/components/async-demo/async-demo.component';
 import { ObservableDemoComponent } from './practice/components/observable-demo/observable-demo.component';
+import { ObsOperatorsDemoComponent } from './practice/components/obs-operators-demo/obs-operators-demo.component';
 
 @NgModule({
   declarations: [           // Custom component, directives, pipes
@@ -57,7 +58,8 @@ import { ObservableDemoComponent } from './practice/components/observable-demo/o
     CtrOneComponent,
     CtrTwoComponent,
     AsyncDemoComponent,
-    ObservableDemoComponent
+    ObservableDemoComponent,
+    ObsOperatorsDemoComponent
   ],
   imports: [                // Built-in & Custom Module
     BrowserModule,

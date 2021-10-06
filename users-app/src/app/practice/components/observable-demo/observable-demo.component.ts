@@ -45,9 +45,14 @@ export class ObservableDemoComponent {
     this.unSub$.unsubscribe();
   }
 
+  packages : Array<string> =[]
+
   onSubscribe(){
     this.unSub$=this.createObservable().subscribe({
-      next : data => console.log(data),
+      next : (data: string) => {
+        console.log(data);
+        this.packages.push(data)
+      },
       error : err => console.error(err),
       complete : () => console.log("COMPLETED")
     });
