@@ -27,6 +27,8 @@ import { RegisterComponent } from './components/auth/register/register.component
 import { DataService } from './services/data.service';
 import { CtrOneComponent } from './practice/components/ctr-one/ctr-one.component';
 import { CtrTwoComponent } from './practice/components/ctr-two/ctr-two.component';
+import { AsyncDemoComponent } from './practice/components/async-demo/async-demo.component';
+import { ObservableDemoComponent } from './practice/components/observable-demo/observable-demo.component';
 
 @NgModule({
   declarations: [           // Custom component, directives, pipes
@@ -53,14 +55,16 @@ import { CtrTwoComponent } from './practice/components/ctr-two/ctr-two.component
     CommentFormComponent,
     RegisterComponent,
     CtrOneComponent,
-    CtrTwoComponent
+    CtrTwoComponent,
+    AsyncDemoComponent,
+    ObservableDemoComponent
   ],
   imports: [                // Built-in & Custom Module
     BrowserModule,
     FormsModule,
     ReactiveFormsModule
   ],
-  providers: [DataService],            // services
+  // providers: [DataService],            // services
   bootstrap: [AppComponent]
 })
 export class AppModule { }

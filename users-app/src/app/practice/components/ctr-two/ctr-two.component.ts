@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { AfterViewInit, Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { DataService } from 'src/app/services/data.service';
 
 @Component({
@@ -8,7 +8,10 @@ import { DataService } from 'src/app/services/data.service';
 })
 export class CtrTwoComponent implements OnInit {
 
+
   constructor(private dataService : DataService) { }
+
+
 
   getCounter(){
     return this.dataService.counter;
