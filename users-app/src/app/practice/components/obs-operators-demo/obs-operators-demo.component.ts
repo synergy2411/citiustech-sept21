@@ -2,7 +2,8 @@ import { AfterViewInit, Component, ElementRef, OnInit, ViewChild } from '@angula
 import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
 import { from, of, interval, range, fromEvent,  } from 'rxjs';
 import { ajax } from 'rxjs/ajax';
-import { take, map, pluck, filter, reduce, takeWhile } from 'rxjs/operators';
+import { take, map, pluck, filter, reduce, takeWhile, takeUntil,
+  mergeAll, debounceTime, sampleTime, throttleTime, auditTime, debounce, mergeMap } from 'rxjs/operators';
 
 @Component({
   selector: 'app-obs-operators-demo',
@@ -12,6 +13,8 @@ import { take, map, pluck, filter, reduce, takeWhile } from 'rxjs/operators';
 export class ObsOperatorsDemoComponent implements OnInit, AfterViewInit {
 
   @ViewChild("btn") btn : ElementRef<HTMLButtonElement>;
+  @ViewChild('btnAbort', { static : true}) btnAbort : ElementRef<HTMLButtonElement>;
+
   searchForm : FormGroup;
   search = new FormControl();
 
@@ -28,16 +31,64 @@ export class ObsOperatorsDemoComponent implements OnInit, AfterViewInit {
     })
   }
 
+  urls : Array<string> = [];
+
   ngOnInit(): void {
 
-    this.search.valueChanges.
-      pipe(
-        takeWhile((value)=>{
-          console.log("[TAKE WHILE]", value)
-          return !value.includes('foo');
+      // Type-ahead suggestions
+      this.search.valueChanges.pipe(
+        debounceTime(2000),
+        mergeMap(value => {
+          return ajax.getJSON(`https://api.github.com/users/${value}/repos`)
         })
-      ).
-    subscribe(console.log);
+      ).subscribe((response : Array<any>) => {
+        console.log('RESPONSE - ', response);
+        this.urls = response.map(r => r['git_url'])
+      })
+
+    // Type-ahead suggestions
+    // this.search.valueChanges.pipe(
+    //   debounceTime(2000),
+    //   map(value => {
+    //     return ajax.getJSON(`https://api.github.com/users/${value}/repos`)
+    //   }),
+    //   mergeAll()
+    // ).subscribe(response => {
+    //   console.log('RESPONSE - ', response);
+    // })
+
+    // debounce
+    // this.search.valueChanges
+    // .pipe(
+    //   // debounceTime(2000)
+    //   // sampleTime(500)
+    //   // throttleTime(3000)
+    //   // auditTime(500)
+    //   )
+    // .subscribe(console.log)
+
+
+
+
+    // takeUntil
+    // const abort$ = fromEvent(this.btnAbort.nativeElement, "click")
+    // this.search.valueChanges
+    //   .pipe(
+    //     takeUntil(abort$)
+    //   )
+    //   .subscribe(console.log)
+
+
+    // takeWhile
+
+    // this.search.valueChanges.
+    //   pipe(
+    //     takeWhile((value)=>{
+    //       console.log("[TAKE WHILE]", value)
+    //       return !value.includes('foo');
+    //     })
+    //   ).
+    // subscribe(console.log);
 
     const users = [
       {email : "test1@test.com", age : 32},

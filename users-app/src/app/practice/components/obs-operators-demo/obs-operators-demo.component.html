@@ -4,4 +4,13 @@
 
 <form [formGroup]="searchForm">
 <input type="text" name="search" formControlName="search">
+<button #btnAbort class="btn btn-dark">Abort</button>
 </form>
+
+<hr>
+
+<ul>
+  <li *ngFor="let url of urls">
+    {{url}}
+  </li>
+</ul>
