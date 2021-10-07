@@ -19,7 +19,13 @@ export class UsersComponent implements OnInit{
 
   ngOnInit(){
     // this.users = USER_DATA;
-    this.users = this.dataService.getUserdata();
+    // this.users = this.dataService.getUserdata();
+    this.dataService.getUserdata()
+      .subscribe({
+        next : (response : Array<User>) => this.users = response,
+        error : err => console.error(err),
+        complete : () => console.log("COMPLETED")
+      })
   }
 
   onMoreInfo(evt : User){
