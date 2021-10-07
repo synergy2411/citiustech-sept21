@@ -1,3 +1,4 @@
+import { HttpErrorResponse } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { User } from 'src/app/model/user';
 import { DataService } from 'src/app/services/data.service';
@@ -17,15 +18,38 @@ export class UsersComponent implements OnInit{
     // this.user = USER_DATA;
   }
 
+  errorMessage : HttpErrorResponse | string;
+  showAlert : boolean = false;
+
   ngOnInit(){
     // this.users = USER_DATA;
     // this.users = this.dataService.getUserdata();
     this.dataService.getUserdata()
       .subscribe({
         next : (response : Array<User>) => this.users = response,
-        error : err => console.error(err),
+        error : (err : HttpErrorResponse) => {
+          console.error('Error caught in component : ', err);
+          switch (err.status) {
+            case 401 :
+            case 402 :
+            case 403 :
+            case 404 :
+              this.showAlert = true;
+              this.errorMessage = err;
+              break;
+            default:
+              this.errorMessage = "Something else happened"
+              break;
+          }
+        },
         complete : () => console.log("COMPLETED")
       })
+  }
+
+  onCloseAlert(flag : boolean){
+    if(flag){
+      this.showAlert = false;
+    }
   }
 
   onMoreInfo(evt : User){

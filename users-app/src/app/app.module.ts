@@ -32,6 +32,7 @@ import { AsyncDemoComponent } from './practice/components/async-demo/async-demo.
 import { ObservableDemoComponent } from './practice/components/observable-demo/observable-demo.component';
 import { ObsOperatorsDemoComponent } from './practice/components/obs-operators-demo/obs-operators-demo.component';
 import { ObsSubjectsDemoComponent } from './practice/components/obs-subjects-demo/obs-subjects-demo.component';
+import { AlertComponent } from './components/alert/alert.component';
 
 @NgModule({
   declarations: [           // Custom component, directives, pipes
@@ -62,7 +63,8 @@ import { ObsSubjectsDemoComponent } from './practice/components/obs-subjects-dem
     AsyncDemoComponent,
     ObservableDemoComponent,
     ObsOperatorsDemoComponent,
-    ObsSubjectsDemoComponent
+    ObsSubjectsDemoComponent,
+    AlertComponent
   ],
   imports: [                // Built-in & Custom Module
     BrowserModule,

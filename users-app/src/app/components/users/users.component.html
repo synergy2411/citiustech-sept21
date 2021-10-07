@@ -1,3 +1,8 @@
+
+<app-alert *ngIf="showAlert"
+  [message] = "errorMessage"
+  (closeEvent)="onCloseAlert($event)"></app-alert>
+
 <div class="container">
   <h5>Users component loaded successfully.</h5>
 

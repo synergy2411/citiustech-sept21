@@ -1,8 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
-import { map } from 'rxjs/operators';
-import { USER_DATA } from '../model/mocks';
+import { Observable, throwError } from 'rxjs';
+import { catchError, map, tap } from 'rxjs/operators';
 import { User } from '../model/user';
 
 @Injectable({
@@ -15,11 +14,15 @@ export class DataService{
   constructor(private httpClient : HttpClient){}
 
   getUserdata() : Observable<Array<User>>{
-    return this.httpClient.get<{userdata : Array<User>}>('./assets/data/user-data.json')
+    return this.httpClient.get<{userdata : Array<User>}>('./assets/date/user-data.json')
       .pipe(
-        map(response =>{
-          console.log("MAP RESPONSE ", response);       // {userdata : [User]} => User[]
-          return  <User[]> response['userdata']})
+        tap(val => console.log("TAP ", val)),
+        map(response => <User[]> response.userdata),
+        catchError(err => {
+          console.log("Error caught in Service ", err);
+          // Error handler code
+          return throwError(err)
+        })
       )
 
   }
