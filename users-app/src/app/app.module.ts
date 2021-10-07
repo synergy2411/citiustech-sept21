@@ -36,6 +36,7 @@ import { AlertComponent } from './components/alert/alert.component';
 import { GlobalErrorHandlerService } from './services/global-error-handler.service';
 import { NotesComponent } from './components/notes/notes.component';
 import { AddNewNoteComponent } from './components/notes/add-new-note/add-new-note.component';
+import { EditNoteComponent } from './components/notes/edit-note/edit-note.component';
 
 @NgModule({
   declarations: [           // Custom component, directives, pipes
@@ -69,7 +70,8 @@ import { AddNewNoteComponent } from './components/notes/add-new-note/add-new-not
     ObsSubjectsDemoComponent,
     AlertComponent,
     NotesComponent,
-    AddNewNoteComponent
+    AddNewNoteComponent,
+    EditNoteComponent
   ],
   imports: [                // Built-in & Custom Module
     BrowserModule,

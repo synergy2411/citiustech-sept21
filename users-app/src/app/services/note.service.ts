@@ -9,6 +9,7 @@ import { Note } from '../model/note';
 export class NoteService {
 
   private baseUrl = "http://localhost:3000/notes";
+  // private notes : Note[] = [];
 
   constructor(private http: HttpClient) { }
 

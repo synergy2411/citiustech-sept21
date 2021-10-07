@@ -10,7 +10,9 @@ import { NoteService } from 'src/app/services/note.service';
 export class NotesComponent implements OnInit {
 
   noteCollection : Note[] = [];
+  selectedNote : Note;
   showNewNote:  boolean = false;
+  showEditForm: boolean = false;
 
   constructor(private noteService: NoteService) { }
 
@@ -31,6 +33,18 @@ export class NotesComponent implements OnInit {
       this.showNewNote = false;
       this.getNotes()
     }
+  }
+
+  onSelectNote(note: Note){
+    this.showEditForm = true;
+    this.selectedNote = note;
+  }
+
+  onEditNote(flag : boolean){
+    if(flag){
+      this.getNotes();
+    }
+    this.showEditForm = false;
   }
 
 }

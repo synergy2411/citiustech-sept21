@@ -9,7 +9,7 @@
 
 <div class="row">
   <div class="col-sm-4 col-md-3" *ngFor="let note of noteCollection">
-    <div class="card">
+    <div class="card my-note" (click)="onSelectNote(note)">
       <div class="card-body">
         <h5 class="text-center">{{note.title | uppercase}}</h5>
       </div>
@@ -18,3 +18,8 @@
 </div>
 
 <app-add-new-note *ngIf="showNewNote" (addItemEvent)="onAddNewItem($event)"></app-add-new-note>
+
+<app-edit-note
+  *ngIf="showEditForm"
+  [note] = "selectedNote"
+  (noteEditEvent)="onEditNote($event)" ></app-edit-note>
