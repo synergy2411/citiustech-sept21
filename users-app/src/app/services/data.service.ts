@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable, throwError } from 'rxjs';
 import { catchError, map, tap } from 'rxjs/operators';
@@ -20,8 +20,24 @@ export class DataService{
         map(response => <User[]> response.userdata),
         catchError(err => {
           console.log("Error caught in Service ", err);
+          return throwError(err);
           // Error handler code
-          return throwError(err)
+          // if(err instanceof HttpErrorResponse){
+          //   const { status, statusText, url } = err;
+          //   switch (err.status) {
+          //     case 401 :
+          //     case 402 :
+          //     case 403 :
+          //     case 404 :
+          //       console.log("Error caught in service ", err)
+          //       return throwError(new Observable(observer => {
+          //         observer.next(status);
+          //         observer.next(statusText);
+          //       }))
+          //   }
+          // }else{
+          //   return throwError(err)
+          // }
         })
       )
 

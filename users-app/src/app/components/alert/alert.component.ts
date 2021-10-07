@@ -8,7 +8,7 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 })
 export class AlertComponent implements OnInit {
 
-  @Input() message : HttpErrorResponse;
+  @Input() message : HttpErrorResponse | any;
   @Output() closeEvent = new EventEmitter<boolean>()
 
   onClose(){

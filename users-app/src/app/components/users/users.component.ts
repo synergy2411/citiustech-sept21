@@ -1,7 +1,9 @@
 import { HttpErrorResponse } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
 import { User } from 'src/app/model/user';
 import { DataService } from 'src/app/services/data.service';
+import { GlobalErrorHandlerService } from 'src/app/services/global-error-handler.service';
 // import { USER_DATA } from '../../model/mocks';
 
 @Component({
@@ -14,11 +16,13 @@ export class UsersComponent implements OnInit{
   users : User[];
   tab : number = 1;
 
-  constructor(private dataService : DataService){
+  constructor(private dataService : DataService,
+    // private globalError : GlobalErrorHandlerService
+    ){
     // this.user = USER_DATA;
   }
 
-  errorMessage : HttpErrorResponse | string;
+  errorMessage : string = '';
   showAlert : boolean = false;
 
   ngOnInit(){
@@ -28,19 +32,17 @@ export class UsersComponent implements OnInit{
       .subscribe({
         next : (response : Array<User>) => this.users = response,
         error : (err : HttpErrorResponse) => {
-          console.error('Error caught in component : ', err);
-          switch (err.status) {
-            case 401 :
-            case 402 :
-            case 403 :
-            case 404 :
-              this.showAlert = true;
-              this.errorMessage = err;
-              break;
-            default:
-              this.errorMessage = "Something else happened"
-              break;
-          }
+          GlobalErrorHandlerService.subject.subscribe((response : string) => {
+            console.log("RESPONSE : ", response);
+            this.showAlert = true;
+            this.errorMessage = response;
+          })
+          throw err;
+          // console.error('Error caught in component : ', err);
+          // err.subscribe(data => {
+          //   this.showAlert = true;
+          //   this.errorMessage += String(data)
+          // })
         },
         complete : () => console.log("COMPLETED")
       })

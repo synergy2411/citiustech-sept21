@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { ErrorHandler, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
@@ -33,6 +33,7 @@ import { ObservableDemoComponent } from './practice/components/observable-demo/o
 import { ObsOperatorsDemoComponent } from './practice/components/obs-operators-demo/obs-operators-demo.component';
 import { ObsSubjectsDemoComponent } from './practice/components/obs-subjects-demo/obs-subjects-demo.component';
 import { AlertComponent } from './components/alert/alert.component';
+import { GlobalErrorHandlerService } from './services/global-error-handler.service';
 
 @NgModule({
   declarations: [           // Custom component, directives, pipes
@@ -73,6 +74,9 @@ import { AlertComponent } from './components/alert/alert.component';
     HttpClientModule
   ],
   // providers: [DataService],            // services
+  providers : [
+    {provide : ErrorHandler, useClass : GlobalErrorHandlerService}
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
