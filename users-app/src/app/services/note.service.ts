@@ -1,5 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
+import { Note } from '../model/note';
 
 @Injectable({
   providedIn: 'root'
@@ -10,8 +12,8 @@ export class NoteService {
 
   constructor(private http: HttpClient) { }
 
-  getAllNotes(){
-    return this.http.get(this.baseUrl)
+  getAllNotes(): Observable<Note[]>{
+    return this.http.get<Note[]>(this.baseUrl)
   }
 
   getSingleNote(id){

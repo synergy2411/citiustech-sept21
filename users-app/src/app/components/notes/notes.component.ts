@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Note } from 'src/app/model/note';
 import { NoteService } from 'src/app/services/note.service';
 
 @Component({
@@ -8,23 +9,28 @@ import { NoteService } from 'src/app/services/note.service';
 })
 export class NotesComponent implements OnInit {
 
+  noteCollection : Note[] = [];
+  showNewNote:  boolean = false;
+
   constructor(private noteService: NoteService) { }
 
   ngOnInit(): void {
+    this.getNotes()
+  }
+
+  getNotes(){
     this.noteService.getAllNotes()
-      .subscribe(notes => console.log("[Notes] ", notes));
+      .subscribe((notes : Note[]) => {
+        this.noteCollection = notes
+        console.log(notes)
+      });
+  }
 
-    this.noteService.getSingleNote(1)
-      .subscribe(result => console.log("[Note]", result));
-
-    this.noteService.deleteNote(3)
-    .subscribe(result => console.log("[DELETE]", result));
-
-    this.noteService.createNote({label : "Insurance", body : "renew car insurance"})
-      .subscribe(console.log)
-
-    this.noteService.updateNote(1, "New body added")
-      .subscribe(console.log)
+  onAddNewItem(flag : boolean){
+    if(flag){
+      this.showNewNote = false;
+      this.getNotes()
+    }
   }
 
 }

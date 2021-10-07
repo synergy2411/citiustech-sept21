@@ -1,1 +1,20 @@
-<p>notes works!</p>
+
+<div class="row">
+  <div class="col-12">
+    <button class="btn btn-primary" (click)="showNewNote = !showNewNote">
+      {{ showNewNote ? 'Hide Form' : 'Add New Note'}}
+    </button>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-sm-4 col-md-3" *ngFor="let note of noteCollection">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="text-center">{{note.title | uppercase}}</h5>
+      </div>
+    </div>
+  </div>
+</div>
+
+<app-add-new-note *ngIf="showNewNote" (addItemEvent)="onAddNewItem($event)"></app-add-new-note>
