@@ -5,7 +5,7 @@ import { Subject } from 'rxjs';
 @Injectable()
 export class GlobalErrorHandlerService implements ErrorHandler {
 
-  static subject = new Subject();
+  public subject = new Subject();
 
   constructor() { }
   handleError(error: HttpErrorResponse): void {
@@ -15,11 +15,11 @@ export class GlobalErrorHandlerService implements ErrorHandler {
       case 402:
       case 403:
       case 404:
-        GlobalErrorHandlerService.subject.next(error.statusText)
+        this.subject.next(error.statusText)
         break;
 
       default:
-        GlobalErrorHandlerService.subject.next("Something else happened")
+        this.subject.next("Something else happened")
         break;
     }
   }

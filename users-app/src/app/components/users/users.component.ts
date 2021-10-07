@@ -15,6 +15,7 @@ export class UsersComponent implements OnInit{
 
   users : User[];
   tab : number = 1;
+  globalErrorHandler = new GlobalErrorHandlerService();
 
   constructor(private dataService : DataService,
     // private globalError : GlobalErrorHandlerService
@@ -32,11 +33,11 @@ export class UsersComponent implements OnInit{
       .subscribe({
         next : (response : Array<User>) => this.users = response,
         error : (err : HttpErrorResponse) => {
-          GlobalErrorHandlerService.subject.subscribe((response : string) => {
+          this.globalErrorHandler.subject.subscribe((response : string) => {
             console.log("RESPONSE : ", response);
-            this.showAlert = true;
-            this.errorMessage = response;
           })
+          this.errorMessage = err.statusText;
+          this.showAlert = true;
           throw err;
           // console.error('Error caught in component : ', err);
           // err.subscribe(data => {
