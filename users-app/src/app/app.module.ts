@@ -34,6 +34,7 @@ import { ObsOperatorsDemoComponent } from './practice/components/obs-operators-d
 import { ObsSubjectsDemoComponent } from './practice/components/obs-subjects-demo/obs-subjects-demo.component';
 import { AlertComponent } from './components/alert/alert.component';
 import { GlobalErrorHandlerService } from './services/global-error-handler.service';
+import { NotesComponent } from './components/notes/notes.component';
 
 @NgModule({
   declarations: [           // Custom component, directives, pipes
@@ -65,7 +66,8 @@ import { GlobalErrorHandlerService } from './services/global-error-handler.servi
     ObservableDemoComponent,
     ObsOperatorsDemoComponent,
     ObsSubjectsDemoComponent,
-    AlertComponent
+    AlertComponent,
+    NotesComponent
   ],
   imports: [                // Built-in & Custom Module
     BrowserModule,

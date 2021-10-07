@@ -14,7 +14,7 @@ export class DataService{
   constructor(private httpClient : HttpClient){}
 
   getUserdata() : Observable<Array<User>>{
-    return this.httpClient.get<{userdata : Array<User>}>('./assets/date/user-data.json')
+    return this.httpClient.get<{userdata : Array<User>}>('./assets/data/user-data.json')
       .pipe(
         tap(val => console.log("TAP ", val)),
         map(response => <User[]> response.userdata),
