@@ -224,18 +224,35 @@ export class User{}
     - throttleTime : emits data without delay and then after specified time.
 
 # Joining Operators
-    - ForkJoin
-    - CombineLatest
+    - ForkJoin : joins two observable values and give the combination as output
+    - CombineLatest : joins two observable values and give the final value as output
 
 # Utility Operators
-    - tap
-    - throwError
-    - delay
+    - tap : logging the observable values; great for debugging
+    - throwError : will throw the observable error
+    - delay:  executes with some delay
     
 # Subject
+    - Subject : observable as well as observer - next, error, complete, subscribe, pipe
+    - BehaviourSubject : Seed value
+    - ReplaySubject : record the observable emitted value for n number of times
+    - AsyncSubject : 
 
 
-
-
+- Stateless Reactive Services - 
 
 - Http Calls / HttpClientModule -> Remote Server Call (GET, POST, PATCH, DELETE)
+
+# json-server
+
+> install json-server -> npm install json-server -g
+> create JSON file
+> json-server --watch JSONFileName
+> Make REST Calls
+
+
+# Topics to include
+- Form Array
+- JWT Auth
+- Breadcrumb
+- local/session storage

@@ -1,0 +1,12 @@
+{
+  "notes": [
+    {
+      "title": "shopping ",
+      "body": "to buy the jeans",
+      "id": 1
+    }
+  ],
+  "users" : [
+    { "id" : 1, "username" : "foo@test.com", "password" : "test@123"}
+  ]
+}
