@@ -1,12 +1,26 @@
 {
   "notes": [
     {
-      "title": "shopping ",
-      "body": "to buy the jeans",
-      "id": 1
+      "title": "grocery ",
+      "body": "to buy the rice",
+      "id": 2
     }
   ],
-  "users" : [
-    { "id" : 1, "username" : "foo@test.com", "password" : "test@123"}
+  "users": [
+    {
+      "username": "abc@abc.com",
+      "password": "$2a$12$ftQZE2X3lZOKmQ7n6EcLG.4ZvlBKurVpV6XpVihXd3RJy59W4HSIi",
+      "id": 1
+    },
+    {
+      "username": "test@test.com",
+      "password": "$2a$12$RG1/TIhU2OjFvtiWMk7fdOWbniuxI4EwFOxh/WJKTIhMyGwH8EDhO",
+      "id": 2
+    },
+    {
+      "username": "foo@test.com",
+      "password": "$2a$12$lx4BC13BTFBLKG4Yeh0qIuMrouxf2c3b3/QTpjsaDngcKZjRvomve",
+      "id": 3
+    }
   ]
 }

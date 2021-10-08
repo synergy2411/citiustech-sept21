@@ -1,7 +1,8 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Note } from '../model/note';
+import { UserService } from './user.service';
 
 @Injectable({
   providedIn: 'root'
@@ -11,10 +12,21 @@ export class NoteService {
   private baseUrl = "http://localhost:3000/notes";
   // private notes : Note[] = [];
 
-  constructor(private http: HttpClient) { }
+  constructor(
+    private http: HttpClient,
+    private userService : UserService
+    ) { }
 
   getAllNotes(): Observable<Note[]>{
-    return this.http.get<Note[]>(this.baseUrl)
+    if(this.userService.isAuthenticated()){
+      return this.http.get<Note[]>(this.baseUrl)
+      // return this.http.get<Note[]>(this.baseUrl, {
+      //   params : new HttpParams().set("auth", "token"),
+      //   headers : new HttpHeaders().set("Authorization", "Bearer Token")
+      // })
+    }else{
+      alert("Please login first!!")
+    }
   }
 
   getSingleNote(id){

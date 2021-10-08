@@ -251,6 +251,46 @@ export class User{}
 > Make REST Calls
 
 
+
+
+
+# Register the User - Register Component : Users Collection
+- Should be stored in db.json file
+
+# Login the User - Login Component : Authenticate login credentails 
+- User credentials should be verified from the db.json
+- alert('Authenticated / NOT Authenticated')
+
+# UserService : onRegister(email, password); onLogin(email, password)
+
+# to encrypt Password : bcrypt-js
+- npm install bcryptjs
+
+
+# JSON Web token - jwt.io
+- install jsonwebtoken - npm install jsonwebtoken
+- login with valid credentials
+- Assign the JWT token
+- for subsequent requests, client will attach the token
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 # Topics to include
 - Form Array
 - JWT Auth
