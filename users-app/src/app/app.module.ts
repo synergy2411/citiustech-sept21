@@ -38,6 +38,7 @@ import { NotesComponent } from './components/notes/notes.component';
 import { AddNewNoteComponent } from './components/notes/add-new-note/add-new-note.component';
 import { EditNoteComponent } from './components/notes/edit-note/edit-note.component';
 import { RequestInterceptorService } from './services/request.interceptor';
+import { ResponseInterceptorService } from './services/response-interceptor.service';
 
 @NgModule({
   declarations: [           // Custom component, directives, pipes
@@ -83,7 +84,8 @@ import { RequestInterceptorService } from './services/request.interceptor';
   // providers: [DataService],            // services
   providers : [
     {provide : ErrorHandler, useClass : GlobalErrorHandlerService},
-    { provide : HTTP_INTERCEPTORS, useClass : RequestInterceptorService, multi : true}
+    { provide : HTTP_INTERCEPTORS, useClass : RequestInterceptorService, multi : true},
+    {provide : HTTP_INTERCEPTORS, useClass : ResponseInterceptorService, multi : true}
   ],
   bootstrap: [AppComponent]
 })
