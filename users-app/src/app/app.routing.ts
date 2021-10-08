@@ -3,12 +3,13 @@ import { LoginComponent } from "./components/auth/login/login.component";
 import { RegisterComponent } from "./components/auth/register/register.component";
 import { NotesComponent } from "./components/notes/notes.component";
 import { UsersComponent } from "./components/users/users.component";
+import { DeactivateGaurdService } from "./services/deactivate-gaurd.service";
 import { LoginGaurdService } from "./services/login.gaurd.service";
 
 export const APP_ROUTES : Routes =[
   {path : '', redirectTo : 'register', pathMatch : 'full'},     // http://localhost:4200
   {path : 'login', component : LoginComponent},                 // http://localhost:4200/login
-  {path : 'register', component : RegisterComponent},           // http://localhost:4200/register
+  {path : 'register', component : RegisterComponent, canDeactivate : [DeactivateGaurdService]},           // http://localhost:4200/register
   {path : 'users', component : UsersComponent},                 // http://localhost:4200/users
   {path : 'notes', component : NotesComponent, canActivate : [LoginGaurdService]},
   {path : '**', redirectTo : 'login', pathMatch : 'full'}       // http://localhost:4200/anyOtherPath
