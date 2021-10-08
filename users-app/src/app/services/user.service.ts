@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Router } from '@angular/router';
 import bcrypt from 'bcryptjs';
 
 @Injectable({
@@ -11,7 +12,7 @@ export class UserService {
   private SECRET_KEY = "MY_SUPER_SECRET_KEY";
   private token : string = null;
 
-  constructor(private http : HttpClient) { }
+  constructor(private http : HttpClient, private router: Router) { }
 
   onRegister(username : string, password : string){
     let hashedPassword;
@@ -35,11 +36,13 @@ export class UserService {
       for(let user of users){
         if(user.username === username){
           if(bcrypt.compareSync(password, user.password)){
-            alert('AUTHENTICATED');
             this.token = new Date().toISOString() + Math.random().toString() + username
             localStorage.setItem("token", this.token);
+            this.router.navigate(['/notes'])
+            // alert('AUTHENTICATED');
           }else{
-            alert('NOT AUTHENTICATED')
+            this.router.navigate(['/login'])
+            // alert('NOT AUTHENTICATED')
           }
         }
       }
@@ -55,6 +58,7 @@ export class UserService {
   onLogout(){
     localStorage.removeItem('token')
     this.token = null;
+    this.router.navigate(['/login'])
   }
 
 
