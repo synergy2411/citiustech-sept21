@@ -8,6 +8,9 @@ import { UserService } from 'src/app/services/user.service';
 })
 export class HeaderComponent implements OnInit {
 
+  adminLinks = ['login', 'register', 'notes', 'users']
+  userLinks = ['login', 'register']
+
   constructor(private userService : UserService) { }
 
   ngOnInit(): void {

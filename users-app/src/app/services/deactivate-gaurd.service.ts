@@ -10,6 +10,7 @@ export class DeactivateGaurdService implements CanDeactivate<RegisterComponent> 
 
   constructor() { }
   canDeactivate(component: RegisterComponent, currentRoute: ActivatedRouteSnapshot, currentState: RouterStateSnapshot, nextState?: RouterStateSnapshot): boolean | UrlTree | Observable<boolean | UrlTree> | Promise<boolean | UrlTree> {
+    console.log(currentRoute)
     return component.shouldLeave()
   }
 }
