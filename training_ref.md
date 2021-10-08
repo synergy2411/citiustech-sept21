@@ -275,7 +275,7 @@ export class User{}
 
 
 
-
+# Interceptors - intercept the outgoing requests and incoming responses made by HttpClient
 
 
 

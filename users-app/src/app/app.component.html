@@ -21,9 +21,9 @@
 
 <!-- <app-users></app-users> -->
 
-<app-login></app-login>
+<app-login *ngIf="!isAuthenticated()"></app-login>
 
-<app-register></app-register>
+<app-register *ngIf="!isAuthenticated()"></app-register>
 
 <!-- <app-ctr-one></app-ctr-one> -->
 
@@ -38,6 +38,8 @@
 <!-- <app-obs-operators-demo></app-obs-operators-demo> -->
 
 <!-- <app-obs-subjects-demo></app-obs-subjects-demo> -->
+
+<button class="btn btn-danger" (click)="onLogout()" *ngIf="isAuthenticated()">Logout</button>
 
 <app-notes *ngIf="isAuthenticated()"></app-notes>
 

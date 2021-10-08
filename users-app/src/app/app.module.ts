@@ -1,7 +1,7 @@
 import { ErrorHandler, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 import { UsersComponent } from './components/users/users.component';
@@ -37,6 +37,7 @@ import { GlobalErrorHandlerService } from './services/global-error-handler.servi
 import { NotesComponent } from './components/notes/notes.component';
 import { AddNewNoteComponent } from './components/notes/add-new-note/add-new-note.component';
 import { EditNoteComponent } from './components/notes/edit-note/edit-note.component';
+import { RequestInterceptorService } from './services/request.interceptor';
 
 @NgModule({
   declarations: [           // Custom component, directives, pipes
@@ -81,7 +82,8 @@ import { EditNoteComponent } from './components/notes/edit-note/edit-note.compon
   ],
   // providers: [DataService],            // services
   providers : [
-    {provide : ErrorHandler, useClass : GlobalErrorHandlerService}
+    {provide : ErrorHandler, useClass : GlobalErrorHandlerService},
+    { provide : HTTP_INTERCEPTORS, useClass : RequestInterceptorService, multi : true}
   ],
   bootstrap: [AppComponent]
 })

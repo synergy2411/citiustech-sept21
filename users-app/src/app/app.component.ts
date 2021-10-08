@@ -24,4 +24,7 @@ export class AppComponent {
   isAuthenticated(){
     return this.userService.isAuthenticated();
   }
+  onLogout(){
+    this.userService.onLogout();
+  }
 }
