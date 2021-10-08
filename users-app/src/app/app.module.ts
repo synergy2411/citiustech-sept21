@@ -2,6 +2,7 @@ import { ErrorHandler, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { RouterModule } from '@angular/router';
 
 import { AppComponent } from './app.component';
 import { UsersComponent } from './components/users/users.component';
@@ -39,6 +40,7 @@ import { AddNewNoteComponent } from './components/notes/add-new-note/add-new-not
 import { EditNoteComponent } from './components/notes/edit-note/edit-note.component';
 import { RequestInterceptorService } from './services/request.interceptor';
 import { ResponseInterceptorService } from './services/response-interceptor.service';
+import { APP_ROUTES } from './app.routing';
 
 @NgModule({
   declarations: [           // Custom component, directives, pipes
@@ -79,7 +81,8 @@ import { ResponseInterceptorService } from './services/response-interceptor.serv
     BrowserModule,
     FormsModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    RouterModule.forRoot(APP_ROUTES)
   ],
   // providers: [DataService],            // services
   providers : [
