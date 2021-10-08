@@ -41,6 +41,7 @@ import { EditNoteComponent } from './components/notes/edit-note/edit-note.compon
 import { RequestInterceptorService } from './services/request.interceptor';
 import { ResponseInterceptorService } from './services/response-interceptor.service';
 import { APP_ROUTES } from './app.routing';
+import { HeaderComponent } from './components/header/header.component';
 
 @NgModule({
   declarations: [           // Custom component, directives, pipes
@@ -75,7 +76,8 @@ import { APP_ROUTES } from './app.routing';
     AlertComponent,
     NotesComponent,
     AddNewNoteComponent,
-    EditNoteComponent
+    EditNoteComponent,
+    HeaderComponent
   ],
   imports: [                // Built-in & Custom Module
     BrowserModule,
