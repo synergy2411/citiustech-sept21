@@ -19,7 +19,7 @@ export const APP_ROUTES : Routes =[
     path : 'products',              // http://lcoalhost:4200/products
     component : ProductsComponent,
     children: [{
-      path : 'overview',              // http://lcoalhost:4200/products/overview
+      path : 'overview/:prodId',              // http://lcoalhost:4200/products/overview/8
       component : OverviewComponent
     },{
       path : 'specification',         // http://lcoalhost:4200/products/specification

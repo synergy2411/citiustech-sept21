@@ -282,6 +282,7 @@ export class User{}
 - Routes : Configure the routes- which component should be loaded depending upon the URL
 - RouterOutlet : Provides the space to load the component template
 - RouterLink : changes the URL without reloading the page
+- ActivatedRoute : access the URL / activated route
 
 
 

@@ -45,6 +45,7 @@ import { HeaderComponent } from './components/header/header.component';
 import { ProductsComponent } from './components/products/products.component';
 import { OverviewComponent } from './components/products/overview/overview.component';
 import { SpecificationComponent } from './components/products/specification/specification.component';
+import { ProductService } from './services/product.service';
 
 @NgModule({
   declarations: [           // Custom component, directives, pipes
@@ -90,10 +91,12 @@ import { SpecificationComponent } from './components/products/specification/spec
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
+
     RouterModule.forRoot(APP_ROUTES)
   ],
   // providers: [DataService],            // services
   providers : [
+    ProductService,
     {provide : ErrorHandler, useClass : GlobalErrorHandlerService},
     { provide : HTTP_INTERCEPTORS, useClass : RequestInterceptorService, multi : true},
     {provide : HTTP_INTERCEPTORS, useClass : ResponseInterceptorService, multi : true}
