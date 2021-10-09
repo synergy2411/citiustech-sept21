@@ -278,21 +278,26 @@ export class User{}
 # Interceptors - intercept the outgoing requests and incoming responses made by HttpClient
 
 
+# Routing Terminologies
+- Routes : Configure the routes- which component should be loaded depending upon the URL
+- RouterOutlet : Provides the space to load the component template
+- RouterLink : changes the URL without reloading the page
 
 
 
 
+# Child Routes
+- Courses > Angular React Node
+- AngularComp ReactComp NodeComp
 
 
-
-
-
-
+> to generate the package.json > npm init -y
+> npm install faker
 
 
 
 # Topics to include
 - Form Array
-- JWT Auth
 - Breadcrumb
+- JWT Auth
 - local/session storage
