@@ -8,7 +8,7 @@ export class ResponseInterceptorService implements HttpInterceptor{
 
   constructor() { }
   intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
-    console.log("RESPONSE INTERCEPTOR WORKS")
+    // console.log("RESPONSE INTERCEPTOR WORKS")
     return next.handle(req)
       .pipe(
         tap(val => console.log(val)),

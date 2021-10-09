@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { concatMap, map, mergeAll } from 'rxjs/operators';
 import { ProductService } from 'src/app/services/product.service';
 
 @Component({
@@ -16,13 +17,29 @@ export class OverviewComponent implements OnInit {
 
   ngOnInit(): void {
 
-    console.log("Params : ", this.route.snapshot.params)
-    let id : number = +this.route.snapshot.params['prodId']
-    this.productService.getSingleProduct(id)
-      .subscribe(result => {
-        console.log(result)
-        this.product = result;
+
+    this.route.params.pipe(
+      concatMap(params => {
+        const id = +params['prodId'];
+        return this.productService.getSingleProduct(id)
       })
+    ).subscribe(product => this.product = product)
+
+    // this.route.params.subscribe(params => {
+    //   const id = +params["prodId"]
+    //   this.productService.getSingleProduct(id)
+    //     .subscribe(result => {
+    //       this.product = result
+    //     })
+    // })
+
+    // console.log("Snapshot Params : ", this.route.snapshot.params)
+    // let id : number = +this.route.snapshot.params['prodId']
+    // this.productService.getSingleProduct(id)
+    //   .subscribe(result => {
+    //     console.log(result)
+    //     this.product = result;
+    //   })
 
   }
 

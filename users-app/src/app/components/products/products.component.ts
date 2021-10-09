@@ -20,10 +20,11 @@ export class ProductsComponent implements OnInit {
   ngOnInit(): void {
     this.productService.getAllProducts().pipe(
       map((products: Array<any>) => from(products)),
-      mergeAll()
-    ).pipe(take(10))
+      mergeAll(),
+      take(5)
+    )
       .subscribe((products : Array<any>) => {
-        console.log("[PRODUCTS]", products);
+        // console.log("[PRODUCTS]", products);
         this.products.push(products);
       })
   }

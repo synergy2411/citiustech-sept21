@@ -26,7 +26,7 @@ export class RequestInterceptorService implements HttpInterceptor {
     } else {
       clonedReq = req.clone();
     }
-    console.log('REQUEST INTERCEPTOR WORKS', clonedReq);
+    // console.log('REQUEST INTERCEPTOR WORKS', clonedReq);
 
     return next.handle(clonedReq);
   }

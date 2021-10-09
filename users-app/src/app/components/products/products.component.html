@@ -1,8 +1,5 @@
 <h4 class="text-center">Products Component</h4>
-<br>
-
-<router-outlet></router-outlet>
-
+<br />
 
 <table class="table table-bordered">
   <thead>
@@ -14,16 +11,18 @@
     </tr>
   </thead>
   <tbody>
-    <tr *ngFor="let product of products" class="my-highlight"
-      (click)="onProductSelected(product)">
-      <td>{{product.id}}</td>
-      <td>{{product.name}}</td>
-      <td>{{product.qunatity}}</td>
-      <td>{{product.cost}}</td>
+    <tr *ngFor="let product of products">
+        <td (click)="onProductSelected(product)"  class="my-highlight">{{ product.id }}</td>
+        <td>{{ product.name }}</td>
+        <td>{{ product.qunatity }}</td>
+        <td>{{ product.cost }}</td>
+      <td><a [routerLink]="['specification']"
+          [queryParams]="{'seller' : product.name}">Specification</a></td>
     </tr>
   </tbody>
 </table>
 
+<router-outlet></router-outlet>
 
 <!-- <div class="row">
   <div class="col-4">
@@ -40,4 +39,3 @@
     <router-outlet></router-outlet>
   </div>
 </div> -->
-
