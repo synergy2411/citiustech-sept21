@@ -17,13 +17,17 @@ export class OverviewComponent implements OnInit {
 
   ngOnInit(): void {
 
+    this.route.data.subscribe(response => {
+      this.product = response.product;
+    })
 
-    this.route.params.pipe(
-      concatMap(params => {
-        const id = +params['prodId'];
-        return this.productService.getSingleProduct(id)
-      })
-    ).subscribe(product => this.product = product)
+
+    // this.route.params.pipe(
+    //   concatMap(params => {
+    //     const id = +params['prodId'];
+    //     return this.productService.getSingleProduct(id)
+    //   })
+    // ).subscribe(product => this.product = product)
 
     // this.route.params.subscribe(params => {
     //   const id = +params["prodId"]

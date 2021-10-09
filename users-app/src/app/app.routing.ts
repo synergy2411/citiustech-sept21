@@ -8,6 +8,7 @@ import { SpecificationComponent } from "./components/products/specification/spec
 import { UsersComponent } from "./components/users/users.component";
 import { DeactivateGaurdService } from "./services/deactivate-gaurd.service";
 import { LoginGaurdService } from "./services/login.gaurd.service";
+import { OverviewResolverService } from "./services/overview-resolver.service";
 import { ProductResolverService } from "./services/product.resolver.service";
 
 export const APP_ROUTES : Routes =[
@@ -21,7 +22,8 @@ export const APP_ROUTES : Routes =[
     component : ProductsComponent,
     children: [{
       path : 'overview/:prodId',              // http://lcoalhost:4200/products/overview/8
-      component : OverviewComponent
+      component : OverviewComponent,
+      resolve : { product : OverviewResolverService}
     },{
       path : 'specification',         // http://lcoalhost:4200/products/specification
       component : SpecificationComponent
