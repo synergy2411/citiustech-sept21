@@ -42,6 +42,9 @@ import { RequestInterceptorService } from './services/request.interceptor';
 import { ResponseInterceptorService } from './services/response-interceptor.service';
 import { APP_ROUTES } from './app.routing';
 import { HeaderComponent } from './components/header/header.component';
+import { ProductsComponent } from './components/products/products.component';
+import { OverviewComponent } from './components/products/overview/overview.component';
+import { SpecificationComponent } from './components/products/specification/specification.component';
 
 @NgModule({
   declarations: [           // Custom component, directives, pipes
@@ -77,7 +80,10 @@ import { HeaderComponent } from './components/header/header.component';
     NotesComponent,
     AddNewNoteComponent,
     EditNoteComponent,
-    HeaderComponent
+    HeaderComponent,
+    ProductsComponent,
+    OverviewComponent,
+    SpecificationComponent
   ],
   imports: [                // Built-in & Custom Module
     BrowserModule,

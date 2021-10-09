@@ -2,6 +2,9 @@ import { Routes } from "@angular/router";
 import { LoginComponent } from "./components/auth/login/login.component";
 import { RegisterComponent } from "./components/auth/register/register.component";
 import { NotesComponent } from "./components/notes/notes.component";
+import { OverviewComponent } from "./components/products/overview/overview.component";
+import { ProductsComponent } from "./components/products/products.component";
+import { SpecificationComponent } from "./components/products/specification/specification.component";
 import { UsersComponent } from "./components/users/users.component";
 import { DeactivateGaurdService } from "./services/deactivate-gaurd.service";
 import { LoginGaurdService } from "./services/login.gaurd.service";
@@ -12,5 +15,16 @@ export const APP_ROUTES : Routes =[
   {path : 'register', component : RegisterComponent, canDeactivate : [DeactivateGaurdService]},           // http://localhost:4200/register
   {path : 'users', component : UsersComponent},                 // http://localhost:4200/users
   {path : 'notes', component : NotesComponent, canActivate : [LoginGaurdService]},
+  {
+    path : 'products',              // http://lcoalhost:4200/products
+    component : ProductsComponent,
+    children: [{
+      path : 'overview',              // http://lcoalhost:4200/products/overview
+      component : OverviewComponent
+    },{
+      path : 'specification',         // http://lcoalhost:4200/products/specification
+      component : SpecificationComponent
+    }]
+  },
   {path : '**', redirectTo : 'login', pathMatch : 'full'}       // http://localhost:4200/anyOtherPath
 ]
