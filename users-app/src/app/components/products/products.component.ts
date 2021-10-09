@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { from } from 'rxjs';
-import { map, mergeAll, take } from 'rxjs/operators';
+import { map, mergeAll, skip, take, takeLast } from 'rxjs/operators';
 import { ProductService } from 'src/app/services/product.service';
 
 @Component({
@@ -15,7 +15,7 @@ export class ProductsComponent implements OnInit {
 
   products : Array<any> = []
 
-
+  query = '';
 
   ngOnInit(): void {
     this.productService.getAllProducts().pipe(
@@ -32,5 +32,6 @@ export class ProductsComponent implements OnInit {
   onProductSelected(product:  any){
     this.router.navigate([`products/overview/${product.id}`])
   }
+
 
 }

@@ -9,7 +9,7 @@ export class GlobalErrorHandlerService implements ErrorHandler {
 
   constructor() { }
   handleError(error: HttpErrorResponse): void {
-    console.log("Global Error Handler works")
+    // console.log("Global Error Handler works", error.message)
     switch (error.status) {
       case 401:
       case 402:

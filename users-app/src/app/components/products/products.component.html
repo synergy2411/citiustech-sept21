@@ -1,6 +1,21 @@
 <h4 class="text-center">Products Component</h4>
 <br />
 
+<div class="row">
+  <div class="col-6">
+    <div class="form-group">
+      <input type="text" name="search" class="form-control" [(ngModel)]="query">
+    </div>
+  </div>
+  <div class="col-6">
+    <div class="btn-group">
+      <button class="btn btn-dark btn-sm">Prev</button>
+      <button class="btn btn-dark btn-sm">Next</button>
+    </div>
+  </div>
+</div>
+
+<br>
 <table class="table table-bordered">
   <thead>
     <tr>
@@ -11,16 +26,19 @@
     </tr>
   </thead>
   <tbody>
-    <tr *ngFor="let product of products">
+    <tr *ngFor="let product of products | search : query">
         <td (click)="onProductSelected(product)"  class="my-highlight">{{ product.id }}</td>
         <td>{{ product.name }}</td>
         <td>{{ product.qunatity }}</td>
         <td>{{ product.cost }}</td>
       <td><a [routerLink]="['specification']"
-          [queryParams]="{'seller' : product.name}">Specification</a></td>
+          [queryParams]="{'productName' : product.name, 'quantity': product.qunatity}">Specification</a></td>
     </tr>
   </tbody>
 </table>
+
+
+
 
 <router-outlet></router-outlet>
 

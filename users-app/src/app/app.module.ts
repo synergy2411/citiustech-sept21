@@ -46,6 +46,7 @@ import { ProductsComponent } from './components/products/products.component';
 import { OverviewComponent } from './components/products/overview/overview.component';
 import { SpecificationComponent } from './components/products/specification/specification.component';
 import { ProductService } from './services/product.service';
+import { SearchPipe } from './pipes/search.pipe';
 
 @NgModule({
   declarations: [           // Custom component, directives, pipes
@@ -84,7 +85,8 @@ import { ProductService } from './services/product.service';
     HeaderComponent,
     ProductsComponent,
     OverviewComponent,
-    SpecificationComponent
+    SpecificationComponent,
+    SearchPipe
   ],
   imports: [                // Built-in & Custom Module
     BrowserModule,
