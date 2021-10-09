@@ -283,9 +283,14 @@ export class User{}
 - RouterOutlet : Provides the space to load the component template
 - RouterLink : changes the URL without reloading the page
 - ActivatedRoute : access the URL / activated route
+- Router - Injectable Service; can programmatically navigate the user
+- CanActivate / CanDeactive
+- Nested Routing
+- Query & Route Params
+- Resolve
 
 
-
+- RxJS - skip()
 
 # Child Routes
 - Courses > Angular React Node
@@ -302,3 +307,26 @@ export class User{}
 - Breadcrumb
 - JWT Auth
 - local/session storage
+
+
+
+# Steps 
+
+- Click the products link
+- product component loads its templates
+- ngOninit()
+- Calls Service -> GET /products [2S]
+- Service populates the data in products component
+- product comp display the data on template
+
+# Pre-fetching using resolve
+- Click the Product link
+- Resolvers : make call to the Service [2S/4S]
+- loads Component template
+- See the empty template
+
+
+
+# Modules with Providers -
+- Nested modules are able to get single instance of Service
+- Treated as global service

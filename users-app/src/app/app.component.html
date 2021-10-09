@@ -9,7 +9,18 @@
         *ngIf="isAuthenticated()" (click)="onLogout()">Logout</button>
     </div>
   </div>
-  <h4>Hello Angular!!!</h4>
+
+
+
+<h5>EMP Counter in App Cmp : {{ getCounter() }} </h5>
+<button class="btn btn-primary" (click)="increase()">App Cmp :  Increase</button>
+
+
+  <!-- <app-personal></app-personal> -->
+
+  <app-new-employee></app-new-employee>
+
+  <app-admin></app-admin>
 
 
   <router-outlet></router-outlet>

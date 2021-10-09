@@ -3,6 +3,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
+import { EmployeeModule } from './modules/employee/employee.module';
+
 
 import { AppComponent } from './app.component';
 import { UsersComponent } from './components/users/users.component';
@@ -93,7 +95,7 @@ import { SearchPipe } from './pipes/search.pipe';
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
-
+    EmployeeModule,
     RouterModule.forRoot(APP_ROUTES)
   ],
   // providers: [DataService],            // services

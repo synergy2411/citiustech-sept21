@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { EmployeeService } from './modules/employee/services/employee.service';
 import { UserService } from './services/user.service';
 
 @Component({
@@ -19,12 +20,19 @@ export class AppComponent {
   title = "The Awesome App";
   showComp = true;
 
-  constructor(private userService : UserService){}
+  constructor(private userService : UserService, private empService : EmployeeService){}
 
   isAuthenticated(){
     return this.userService.isAuthenticated();
   }
   onLogout(){
     this.userService.onLogout();
+  }
+
+  getCounter(){
+    return this.empService.counter;
+  }
+  increase(){
+    this.empService.counter++;
   }
 }
