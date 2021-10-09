@@ -8,6 +8,7 @@ import { SpecificationComponent } from "./components/products/specification/spec
 import { UsersComponent } from "./components/users/users.component";
 import { DeactivateGaurdService } from "./services/deactivate-gaurd.service";
 import { LoginGaurdService } from "./services/login.gaurd.service";
+import { ProductResolverService } from "./services/product.resolver.service";
 
 export const APP_ROUTES : Routes =[
   {path : '', redirectTo : 'register', pathMatch : 'full'},     // http://localhost:4200
@@ -24,7 +25,8 @@ export const APP_ROUTES : Routes =[
     },{
       path : 'specification',         // http://lcoalhost:4200/products/specification
       component : SpecificationComponent
-    }]
+    }],
+    resolve : { value : ProductResolverService }
   },
   {path : '**', redirectTo : 'login', pathMatch : 'full'}       // http://localhost:4200/anyOtherPath
 ]
