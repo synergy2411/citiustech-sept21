@@ -25,4 +25,17 @@
 </ng-container>
 {{ hobbies.value | json }}
 
+<hr>
 
+<form [formGroup]="myForm">
+  <div class="form-group">
+    Username : <input type="text" formControlName="username"> <br>
+    Password : <input type="text" formControlName="password"> <br>
+    <button (click)="addRole()">Add New Role</button>
+    <ng-container *ngFor="let control of roles.controls; index as i">
+      <input type="text" [formControl]="roles.controls[i]">
+    </ng-container>
+  </div>
+</form>
+
+{{ roles.value | json }}

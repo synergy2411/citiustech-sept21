@@ -11,11 +11,22 @@ export class FormArrayDemoComponent implements OnInit {
   courses = new FormArray([])
   hobbies = new FormArray([])
 
+  myForm : FormGroup;
+
   constructor(private fb : FormBuilder) {
-    this.fb.group({
+    this.myForm = this.fb.group({
       username : this.username,
-      password : new FormControl('')
+      password : new FormControl(''),
+      roles : new FormArray([])
     })
+   }
+
+   get roles(){
+     return this.myForm.get('roles') as FormArray;
+   }
+
+   addRole(){
+    this.roles.push(new FormControl(''))
    }
 
    addHobby(){
