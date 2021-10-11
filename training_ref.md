@@ -343,10 +343,45 @@ lazy - Lazily loaded
 Dashboard - Lazily loaded
 Patient - Lazily Loaded
 
-
 - Lazy Modules always create separate DI scope
     > services registered with Lazy Module with have separate DI 
 
 - To access the App level DI Tree, create static forRoot() : ModuleWithProvider methods for SharedModule
 - SharedModule.forRoot() in AppModule
 - SharedModule in LazyModule
+- Preloading Strategies - no preloading, preloading all modules
+
+
+- Observable operator >
+    - 
+- FormArray
+- App Optimization Techniques
+- Deployment
+    > Cloud - Firebase Cloud > gmail credentials
+    > IIS - 
+
+
+- FormGroup -> FormArray -> FormControl
+- FormGroup -> FormArray -> FormGroup
+
+
+# App Deployment
+- IIS -> enable IIS -> Control panel -> Programs -> Turn Windows Features On or Off -> Select IIS & IIS Hostable Webcore
+- ng build --prod --base-href=/my-app/
+- Run -> inetmgr
+
+- Firebase > npm i firebase-tools -g
+- firebase --version
+- firebase login
+- ng build --prod 
+- firebase init
+- firebase deploy
+
+-> Node Server -> Angular App
+
+- Static Web Server
+> npm install http-server -g
+> /dist/users-app> http-server
+
+-> npm install heroku -g
+
