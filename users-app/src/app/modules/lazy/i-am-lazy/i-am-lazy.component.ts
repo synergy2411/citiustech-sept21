@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { SharedService } from '../../shared/services/shared.service';
 
 @Component({
   selector: 'app-i-am-lazy',
@@ -7,8 +8,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class IAmLazyComponent implements OnInit {
 
-  constructor() { }
+  constructor(public sharedService : SharedService) { }
 
+  onIncrease(){
+    this.sharedService.sharedCounter++
+  }
   ngOnInit(): void {
   }
 

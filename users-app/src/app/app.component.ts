@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { EmployeeService } from './modules/employee/services/employee.service';
+import { SharedService } from './modules/shared/services/shared.service';
 import { UserService } from './services/user.service';
 
 @Component({
@@ -20,7 +21,11 @@ export class AppComponent {
   title = "The Awesome App";
   showComp = true;
 
-  constructor(private userService : UserService, private empService : EmployeeService){}
+  constructor(
+    private userService : UserService,
+    private empService : EmployeeService,
+    public sharedService : SharedService
+    ){}
 
   isAuthenticated(){
     return this.userService.isAuthenticated();

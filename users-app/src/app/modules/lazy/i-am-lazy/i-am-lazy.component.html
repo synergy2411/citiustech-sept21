@@ -13,6 +13,8 @@
     </ul>
   </div>
   <div class="col-9">
+    <h4>SharedService Counter in Lazy Comp : {{ sharedService.sharedCounter }} </h4>
+    <button class="btn btn-success" (click)="onIncrease()">SharedCounter : Increase</button>
     <h5>I Am Lazy Component</h5>
     <router-outlet></router-outlet>
   </div>

@@ -49,6 +49,7 @@ import { OverviewComponent } from './components/products/overview/overview.compo
 import { SpecificationComponent } from './components/products/specification/specification.component';
 import { ProductService } from './services/product.service';
 import { SearchPipe } from './pipes/search.pipe';
+import { SharedModule } from './modules/shared/shared.module';
 
 @NgModule({
   declarations: [           // Custom component, directives, pipes
@@ -96,6 +97,7 @@ import { SearchPipe } from './pipes/search.pipe';
     ReactiveFormsModule,
     HttpClientModule,
     EmployeeModule,
+    SharedModule.forRoot(),
     RouterModule.forRoot(APP_ROUTES)
   ],
   // providers: [DataService],            // services

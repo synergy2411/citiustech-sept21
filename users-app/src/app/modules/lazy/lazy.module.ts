@@ -3,6 +3,8 @@ import { CommonModule } from '@angular/common';
 import { IAmLazyComponent } from './i-am-lazy/i-am-lazy.component';
 import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './components/home/home.component';
+import { LazyService } from './lazy.service';
+import { SharedModule } from '../shared/shared.module';
 
 const LAZY_ROUTES : Routes = [
   {
@@ -27,7 +29,9 @@ const LAZY_ROUTES : Routes = [
   ],
   imports: [
     CommonModule,
+    SharedModule,
     RouterModule.forChild(LAZY_ROUTES)
-  ]
+  ],
+  providers :  [LazyService]
 })
 export class LazyModule { }

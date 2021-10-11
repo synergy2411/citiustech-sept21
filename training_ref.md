@@ -330,3 +330,23 @@ export class User{}
 # Modules with Providers -
 - Nested modules are able to get single instance of Service
 - Treated as global service
+
+
+# Nested Routing with Lazy Module
+
+- http://localhost:4200/lazy/home
+- htttp://localhost:4200/lazy/dashboard
+- http://localhost:4200/lazy/patient
+
+
+lazy - Lazily loaded
+Dashboard - Lazily loaded
+Patient - Lazily Loaded
+
+
+- Lazy Modules always create separate DI scope
+    > services registered with Lazy Module with have separate DI 
+
+- To access the App level DI Tree, create static forRoot() : ModuleWithProvider methods for SharedModule
+- SharedModule.forRoot() in AppModule
+- SharedModule in LazyModule
