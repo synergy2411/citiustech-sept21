@@ -29,6 +29,9 @@ export const APP_ROUTES : Routes =[
       component : SpecificationComponent
     }],
     resolve : { value : ProductResolverService }
+  },{
+    path : 'lazy',                    // http://localhost:4200/lazy
+    loadChildren : () => import('./modules/lazy/lazy.module').then(m => m.LazyModule).catch(err=>console.log(err))
   },
   {path : '**', redirectTo : 'login', pathMatch : 'full'}       // http://localhost:4200/anyOtherPath
 ]
