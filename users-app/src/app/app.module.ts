@@ -2,7 +2,7 @@ import { ErrorHandler, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
-import { RouterModule } from '@angular/router';
+import { PreloadAllModules, RouterModule } from '@angular/router';
 import { EmployeeModule } from './modules/employee/employee.module';
 
 
@@ -50,6 +50,8 @@ import { SpecificationComponent } from './components/products/specification/spec
 import { ProductService } from './services/product.service';
 import { SearchPipe } from './pipes/search.pipe';
 import { SharedModule } from './modules/shared/shared.module';
+import { ReviseObsComponent } from './components/revise-obs/revise-obs.component';
+import { FormArrayDemoComponent } from './components/form-array-demo/form-array-demo.component';
 
 @NgModule({
   declarations: [           // Custom component, directives, pipes
@@ -89,7 +91,9 @@ import { SharedModule } from './modules/shared/shared.module';
     ProductsComponent,
     OverviewComponent,
     SpecificationComponent,
-    SearchPipe
+    SearchPipe,
+    ReviseObsComponent,
+    FormArrayDemoComponent
   ],
   imports: [                // Built-in & Custom Module
     BrowserModule,
@@ -98,7 +102,7 @@ import { SharedModule } from './modules/shared/shared.module';
     HttpClientModule,
     EmployeeModule,
     SharedModule.forRoot(),
-    RouterModule.forRoot(APP_ROUTES)
+    RouterModule.forRoot(APP_ROUTES, { preloadingStrategy : PreloadAllModules})
   ],
   // providers: [DataService],            // services
   providers : [
