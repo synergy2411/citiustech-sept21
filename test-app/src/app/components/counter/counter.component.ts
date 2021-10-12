@@ -8,6 +8,14 @@ import { Component, OnInit } from '@angular/core';
 export class CounterComponent implements OnInit {
 
   counter = 0;
+
+  onIncrease(){
+    this.counter++;
+  }
+  onDecrease(){
+    this.counter--
+  }
+
   constructor() { }
 
   ngOnInit(): void {
