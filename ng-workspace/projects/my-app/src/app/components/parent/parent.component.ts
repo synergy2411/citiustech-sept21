@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { ChangeDetectorRef, Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-parent',
@@ -11,6 +11,7 @@ export class ParentComponent implements OnInit {
     email : "foo@test.com",
     age : 32
   }
+
 
   changeMail(){
     // Impure Change
@@ -25,9 +26,12 @@ export class ParentComponent implements OnInit {
     }
   }
 
-  constructor() { }
+  constructor(private cdRef : ChangeDetectorRef) {
+    this.cdRef.detach()
+   }
 
   ngOnInit(): void {
+    this.cdRef.reattach()
   }
 
 }

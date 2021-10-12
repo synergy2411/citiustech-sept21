@@ -394,3 +394,15 @@ Patient - Lazily Loaded
 > ng build --project=<lib-name>
 > import library module in Application and access library functionalities 
 > ng serve --project=<app_name>
+
+- ng g c components/comp_name --project=my-app
+
+
+# Angular Reference 
+- https://angular-training-guide.rangle.io/
+- Angular PDF 
+- Quick Reference
+- Observable PDF
+- Git Repo : https://github.com/synergy2411/citiustech-sept21
+- Video Recordings
+- synergy2411@outlook.com
