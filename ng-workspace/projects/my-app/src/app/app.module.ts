@@ -4,10 +4,14 @@ import { MyLibModule } from 'my-lib';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { ParentComponent } from './components/parent/parent.component';
+import { ChildComponent } from './components/parent/child/child.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    ParentComponent,
+    ChildComponent
   ],
   imports: [
     BrowserModule,

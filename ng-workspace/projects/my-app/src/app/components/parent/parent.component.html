@@ -1,0 +1,11 @@
+<p>parent works!</p>
+
+<button (click)="changeMail()">Change User email</button>
+<button (click)="changeMailRef()">Change User Reference</button>
+
+
+<div [ngStyle]="{'border' : '2px red solid'}">
+  <h4>Email : {{ user.email }} </h4>
+</div>
+
+<app-child [user]="user"></app-child>
