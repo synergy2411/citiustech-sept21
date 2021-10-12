@@ -1,0 +1,17 @@
+{
+  "extends": "../../tslint.json",
+  "rules": {
+    "directive-selector": [
+      true,
+      "attribute",
+      "citiusTech",
+      "camelCase"
+    ],
+    "component-selector": [
+      true,
+      "element",
+      "citius-tech",
+      "kebab-case"
+    ]
+  }
+}

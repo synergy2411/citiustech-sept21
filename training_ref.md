@@ -383,5 +383,14 @@ Patient - Lazily Loaded
 > npm install http-server -g
 > /dist/users-app> http-server
 
--> npm install heroku -g
+> npm install heroku -g
 
+
+# Creating Angular Libraries
+> ng new ng-workspace --createApplication=false
+> cd ng-workspace
+> ng generate library <lib_name> --prefix=<prefix_name>
+> ng generate application <app_name>
+> ng build --project=<lib-name>
+> import library module in Application and access library functionalities 
+> ng serve --project=<app_name>

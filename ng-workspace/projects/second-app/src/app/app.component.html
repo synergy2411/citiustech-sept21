@@ -1,0 +1,28 @@
+<h3>Second App Component Loaded</h3>
+<citius-tech-my-lib></citius-tech-my-lib>
+
+<!-- Property Binding -->
+
+<h4>Property binding :  <span [innerText]="snippets"></span></h4>
+
+<!-- Angular Expression -->
+
+<h4>Expression : {{ snippets }}</h4>
+
+<a [href]="url">URL Link</a> <br>
+<a [href]="safeUrl">Safe URL</a>
+
+<script>
+  alert("Hello World")
+  console.log("XSS")
+</script>
+
+<hr>
+
+<button class="btn btn-default" (click)="addItem()">Add New Item</button>
+
+<ul>
+  <li *ngFor="let note of notesCollection; trackBy : trackById">
+    {{ note. label }}
+  </li>
+</ul>
