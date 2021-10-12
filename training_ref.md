@@ -406,3 +406,33 @@ Patient - Lazily Loaded
 - Git Repo : https://github.com/synergy2411/citiustech-sept21
 - Video Recordings
 - synergy2411@outlook.com
+
+
+
+
+
+# Testing
+
+- What is Test/Testing ?
+> check the expected result
+> find error and bugs / Validation
+> Process of performing Test
+> Evaluation of Code
+
+- App Integration : Checking all stuff working as expected
+- Cross Platform;
+- Checking the Routes
+
+# TDD & BDD Approach
+- Test Driven Development : Unit tests, write the code
+    > Write the Test, make them fail, Write the Code, make them Pass
+- Behaviour Driven Development : Integration Testing
+
+# Unit Testing
+- Isolated : Independent Testing
+- Shallow : Component -> Class + Template
+- Deep : 
+    - Component -> Class + Template -> Child Component -> @Input() / @Output()
+    - Component -> someMethod() => Service Method()
+
+- ng test
