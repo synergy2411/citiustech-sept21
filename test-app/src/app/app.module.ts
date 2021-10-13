@@ -15,6 +15,7 @@ import { ProductsComponent } from './components/products/products.component';
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 import { RouterModule } from '@angular/router';
 import { APP_ROUTES } from './app.routes';
+import { ProductDetailComponent } from './components/product-detail/product-detail.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { APP_ROUTES } from './app.routes';
     FilterPipe,
     HomeComponent,
     ProductsComponent,
-    PageNotFoundComponent
+    PageNotFoundComponent,
+    ProductDetailComponent
   ],
   imports: [
     BrowserModule,

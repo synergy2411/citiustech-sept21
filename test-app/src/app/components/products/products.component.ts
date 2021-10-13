@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { ProductService } from 'src/app/services/product.service';
 
 @Component({
   selector: 'app-products',
@@ -7,9 +9,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProductsComponent implements OnInit {
 
-  constructor() { }
+  products : Array<any> = []
+
+  constructor(private productService : ProductService, private router : Router) { }
 
   ngOnInit(): void {
+    this.productService.getAllProducts().subscribe(response => {
+      this.products = response;
+    })
   }
 
+  navigateUser(product : any){
+    this.router.navigate(['/product-detail'])
+  }
 }

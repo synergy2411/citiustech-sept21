@@ -1,5 +1,7 @@
 import { Location } from "@angular/common";
-import { ComponentFixture, TestBed } from "@angular/core/testing"
+import { DebugElement } from "@angular/core";
+import { ComponentFixture, fakeAsync, TestBed, tick } from "@angular/core/testing"
+import { By } from "@angular/platform-browser";
 import { Router } from "@angular/router";
 import { RouterTestingModule } from '@angular/router/testing';
 
@@ -14,6 +16,7 @@ describe("App Routes", () => {
   let component : AppComponent;
   let router : Router;
   let location : Location;
+  let de : DebugElement;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
@@ -29,9 +32,31 @@ describe("App Routes", () => {
     component = fixture.componentInstance;
     router = TestBed.inject(Router);
     location = TestBed.inject(Location);
-
+    de = fixture.debugElement;
     router.initialNavigation()
   })
+
+  it("Should navigate to /product-detail from /product on li:click", fakeAsync(() =>{
+    fixture.detectChanges();
+    router.navigate(['/products'])
+    tick();
+    expect(location.path()).toBe("/products")
+    fixture.detectChanges();
+
+    let liElements = de.queryAll(By.css(".list-group-item"))
+    liElements[1].nativeElement.click();
+    tick();
+
+    expect(location.path()).toBe("/product-detail")
+
+  }))
+
+  it("Should navigate to /products", fakeAsync(() => {
+    fixture.detectChanges();
+    router.navigate(['/products']);
+    tick();
+    expect(location.path()).toBe("/products")
+  }))
 
   it("Should navigate to /home", async () => {
     fixture.detectChanges()
