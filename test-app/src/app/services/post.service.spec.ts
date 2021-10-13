@@ -3,6 +3,7 @@ import { HttpClientTestingModule, HttpTestingController } from '@angular/common/
 
 import { PostService } from './post.service';
 import { Post } from '../model/post';
+import { HttpErrorResponse } from '@angular/common/http';
 
 describe('PostService', () => {
 
@@ -20,6 +21,19 @@ describe('PostService', () => {
   afterEach(()=>{
     httpTestCtrl.verify();
   })
+
+  it("Should fail the test", () => {
+    let errorMsg = "Something bad happened : Error - 404"
+    service.getAllPost().subscribe(
+      response => {
+      fail('I failed the test intentionally')
+    }, (error : HttpErrorResponse) => {
+      expect(error.status).toBe(404)
+      expect(error.error).toBe(errorMsg)
+    })
+    const req = httpTestCtrl.expectOne(service.BASE_URL+'posts')
+    req.flush(errorMsg,{ status : 404, statusText : 'Not Found'})
+  } )
 
   it("Should create /POST for given URL", () =>{
     const post : Post = {id : 100, body : "My Body", title : "My Title", userId : 199};
