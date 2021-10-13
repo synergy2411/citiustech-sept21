@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { User } from 'src/app/model/user';
 
 @Component({
@@ -15,6 +15,13 @@ export class ChildComponent implements OnInit {
     this.userEmail = user.email;
     this.userAge = user.age;
   };
+
+  @Output() childEvent = new EventEmitter<User>()
+
+  saveUser(){
+    let user : User = {email : "new@email.com", age : 34}
+    this.childEvent.emit(user)
+  }
 
   constructor() { }
 
