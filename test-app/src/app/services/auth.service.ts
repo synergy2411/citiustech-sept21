@@ -9,7 +9,7 @@ export class AuthService {
     localStorage.setItem("token", "Bearer MyToken")
   }
 
-  checkToken(){
+  checkToken(): boolean{
     return (localStorage.getItem("token") === "Bearer MyToken")
   }
 }

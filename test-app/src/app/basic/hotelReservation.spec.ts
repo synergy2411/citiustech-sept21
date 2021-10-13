@@ -2,7 +2,7 @@ import { HotelReservation } from './hotelReservation';
 
 // AAA Pattern - Arrange - Act - Assert
 
-describe("Hotel Reservation", () => {
+xdescribe("Hotel Reservation", () => {
 
   // let customer = new HotelReservation();
   let customer;

@@ -8,9 +8,18 @@ import { AuthService } from 'src/app/services/auth.service';
 })
 export class AuthComponent implements OnInit {
 
+  salarySlip : string = '';
   constructor(private authService : AuthService) { }
 
   ngOnInit(): void {
+  }
+
+  getSalarySlip(){
+    if(this.authService.checkToken()){
+      this.salarySlip = "Generate Salary Slip"
+    }else{
+      this.salarySlip = "Can't Generate Salary Slip"
+    }
   }
 
   isAuthenticated(){
