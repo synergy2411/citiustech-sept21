@@ -10,6 +10,11 @@ import { ParentComponent } from './components/parent/parent.component';
 import { ChildComponent } from './components/parent/child/child.component';
 import { ReversePipe } from './pipes/reverse.pipe';
 import { FilterPipe } from './pipes/filter.pipe';
+import { HomeComponent } from './components/home/home.component';
+import { ProductsComponent } from './components/products/products.component';
+import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
+import { RouterModule } from '@angular/router';
+import { APP_ROUTES } from './app.routes';
 
 @NgModule({
   declarations: [
@@ -20,11 +25,15 @@ import { FilterPipe } from './pipes/filter.pipe';
     ParentComponent,
     ChildComponent,
     ReversePipe,
-    FilterPipe
+    FilterPipe,
+    HomeComponent,
+    ProductsComponent,
+    PageNotFoundComponent
   ],
   imports: [
     BrowserModule,
-    HttpClientModule
+    HttpClientModule,
+    RouterModule.forRoot(APP_ROUTES)
   ],
   providers: [],
   bootstrap: [AppComponent]
