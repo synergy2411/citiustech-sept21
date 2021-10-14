@@ -23,7 +23,7 @@ app.post('/api/login', (req, res) => {
     if(req.body){
         // Write code to authenticate the user here
         console.log(req.body);
-        const token = jwt.sign(req.body, MY_SECRET)
+        const token = jwt.sign(req.body, MY_SECRET, { expiresIn : '1h'})
 
         return res.send({message : "API SUCCESS", token})
     }
