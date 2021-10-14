@@ -15,6 +15,7 @@ import { ProductDetailComponent } from './components/product-detail/product-deta
 import { ProductsComponent } from './components/products/products.component';
 import { FilterPipe } from './pipes/filter.pipe';
 import { ReversePipe } from './pipes/reverse.pipe';
+import { REVISED_ROUTES } from './revised.routes';
 
 
 @NgModule({
@@ -35,7 +36,8 @@ import { ReversePipe } from './pipes/reverse.pipe';
   imports: [
     BrowserModule,
     HttpClientModule,
-    RouterModule.forRoot(APP_ROUTES)
+    // RouterModule.forRoot(APP_ROUTES)
+    RouterModule.forRoot(REVISED_ROUTES)
   ],
   providers: [],
   bootstrap: [AppComponent]

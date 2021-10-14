@@ -1,11 +1,10 @@
 import { Location } from "@angular/common";
 import { DebugElement } from "@angular/core";
 import { ComponentFixture, fakeAsync, TestBed, tick } from "@angular/core/testing";
-import { BrowserModule, By } from "@angular/platform-browser";
+import { By } from "@angular/platform-browser";
 import { ActivatedRoute, convertToParamMap, Router } from "@angular/router";
 import { RouterTestingModule } from '@angular/router/testing';
 import { of } from "rxjs";
-import { Browser } from "selenium-webdriver";
 import { AppComponent } from "./app.component";
 import { APP_ROUTES } from "./app.routes";
 import { HomeComponent } from "./components/home/home.component";
