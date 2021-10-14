@@ -1,6 +1,6 @@
 import { FilterPipe } from './filter.pipe';
 
-describe('FilterPipe', () => {
+xdescribe('FilterPipe', () => {
 
   let pipe : FilterPipe;
 

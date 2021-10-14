@@ -4,7 +4,7 @@ import { By } from '@angular/platform-browser';
 import { ChildComponent } from './child/child.component';
 import { ParentComponent } from './parent.component';
 
-describe('ParentComponent', () => {
+xdescribe('ParentComponent', () => {
   let component: ParentComponent;
   let fixture: ComponentFixture<ParentComponent>;
   let de : DebugElement;

@@ -20,6 +20,6 @@ export class ProductsComponent implements OnInit {
   }
 
   navigateUser(product : any){
-    this.router.navigate(['/product-detail'])
+    this.router.navigate(['/product-detail', product.id])
   }
 }

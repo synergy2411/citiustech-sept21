@@ -405,7 +405,7 @@ Patient - Lazily Loaded
 - Observable PDF
 - Git Repo : https://github.com/synergy2411/citiustech-sept21
 - Video Recordings
-- synergy2411@outlook.com
+
 
 
 
@@ -429,10 +429,40 @@ Patient - Lazily Loaded
 - Behaviour Driven Development : Integration Testing
 
 # Unit Testing
-- Isolated : Independent Testing
-- Shallow : Component -> Class + Template
+- Isolated : Independent Testing; function, Classes etc
+- Shallow : Component -> Class + Template (DebugElement)
 - Deep : 
     - Component -> Class + Template -> Child Component -> @Input() / @Output()
     - Component -> someMethod() => Service Method()
 
 - ng test
+
+# Http Testing
+- Module - HttpClientTestingModule
+- Service - TestBed.inject(HttpTestingController)
+
+# Routing Tests
+- RouterModule.forRoot(ROUTES) -> Router Class/Service, ActivatedRoute
+- RouterTestingModule.withRoutes(ROUTES) - Router Service, ActivatedRoute Service
+
+- Basic SPA App
+- Include the Service 
+- Test the routes
+- Child Routes
+
+
+
+-------------
+NodeJS Auth Token - API Protection
+
+
+
+
+
+
+
+
+
+
+
+- synergy2411@outlook.com

@@ -17,6 +17,6 @@ export class ProductService {
     return of(this.PRODUCTS)
   }
   getProductById(id :number){
-
+    return of(this.PRODUCTS.find(product => product.id == id))
   }
 }
