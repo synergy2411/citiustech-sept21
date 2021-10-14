@@ -3,7 +3,7 @@ import { User } from 'src/app/model/user';
 
 import { ChildComponent } from './child.component';
 
-xdescribe('ChildComponent', () => {
+describe('ChildComponent', () => {
   let component: ChildComponent;
   let fixture: ComponentFixture<ChildComponent>;
 

@@ -2,7 +2,7 @@ import { TestBed } from '@angular/core/testing';
 
 import { AsyncService } from './async.service';
 
-xdescribe('AsyncService', () => {
+describe('AsyncService', () => {
   let service: AsyncService;
 
   beforeEach(() => {

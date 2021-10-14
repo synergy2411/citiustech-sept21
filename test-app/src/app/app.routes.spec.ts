@@ -59,7 +59,7 @@ describe("App Routes", () => {
     let liElements = de.queryAll(By.css('.list-group-item'))
     liElements[0].nativeElement.click();
     tick();
-    expect(location.path()).toBe('/product-detail')
+    expect(location.path()).toContain('/product-detail')
     fixture.detectChanges();
     let productDetailFixture =TestBed.createComponent(ProductDetailComponent)
     let productDetailComponentInstance = productDetailFixture.componentInstance;
@@ -82,7 +82,7 @@ describe("App Routes", () => {
     liElements[0].nativeElement.click();
     tick();
 
-    expect(location.path()).toBe("/product-detail")
+    expect(location.path()).toContain("/product-detail")
 
   }))
 

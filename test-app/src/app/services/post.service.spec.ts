@@ -5,7 +5,7 @@ import { PostService } from './post.service';
 import { Post } from '../model/post';
 import { HttpErrorResponse } from '@angular/common/http';
 
-xdescribe('PostService', () => {
+describe('PostService', () => {
 
   let service: PostService;
   let httpTestCtrl : HttpTestingController;

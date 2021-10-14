@@ -5,7 +5,7 @@ import { AsyncService } from 'src/app/services/async.service';
 
 import { AsyncComponent } from './async.component';
 
-xdescribe('AsyncComponent', () => {
+describe('AsyncComponent', () => {
   let component: AsyncComponent;
   let fixture: ComponentFixture<AsyncComponent>;
   let asyncService : AsyncService;

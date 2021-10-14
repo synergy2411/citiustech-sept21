@@ -5,7 +5,7 @@ import { AuthService } from 'src/app/services/auth.service';
 
 import { AuthComponent } from './auth.component';
 
-xdescribe('AuthComponent', () => {
+describe('AuthComponent', () => {
   let component: AuthComponent;
   let fixture: ComponentFixture<AuthComponent>;
   let authService : AuthService;

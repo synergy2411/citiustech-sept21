@@ -1,7 +1,7 @@
 import { addition } from './math';
 
 // Test suite
-xdescribe("math.ts", () => {
+describe("math.ts", () => {
   // test spec
   xit("Should test addition function", ()=>{
     expect(addition(4,6)).toEqual(10)

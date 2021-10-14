@@ -32,6 +32,7 @@ describe("Lazy Route", () => {
   })
 
   it("Should load the module lazily", fakeAsync(() => {
+    // Mocking of Lazy module
     loader.stubbedModules = { lazyModule : LazyModule }
     fixture.detectChanges();
     router.navigateByUrl('/lazy');

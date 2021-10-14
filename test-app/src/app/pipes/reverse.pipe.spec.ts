@@ -1,6 +1,6 @@
 import { ReversePipe } from './reverse.pipe';
 
-xdescribe('ReversePipe', () => {
+describe('ReversePipe', () => {
 // AAA
 let pipeObj : ReversePipe;
   beforeEach(()=>{

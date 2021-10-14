@@ -4,7 +4,7 @@ import { By } from '@angular/platform-browser';
 
 import { CounterComponent } from './counter.component';
 
-xdescribe('CounterComponent', () => {
+describe('CounterComponent', () => {
   let component: CounterComponent;
   let fixture: ComponentFixture<CounterComponent>;
   let h11 : HTMLElement;

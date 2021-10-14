@@ -455,9 +455,13 @@ Patient - Lazily Loaded
 -------------
 NodeJS Auth Token - API Protection
 
+Node + Express
 
+Node REST API + Express
 
-
+/api
+/api/protected - user not able to access the API unless he is authenticated
+/api/login - user will get token;
 
 
 

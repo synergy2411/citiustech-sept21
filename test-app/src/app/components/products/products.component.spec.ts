@@ -1,14 +1,19 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { RouterTestingModule } from '@angular/router/testing';
+import { REVISED_ROUTES } from 'src/app/revised.routes';
+import { ProductService } from 'src/app/services/product.service';
 
 import { ProductsComponent } from './products.component';
 
-xdescribe('ProductsComponent', () => {
+describe('ProductsComponent', () => {
   let component: ProductsComponent;
   let fixture: ComponentFixture<ProductsComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ ProductsComponent ]
+      declarations: [ ProductsComponent ],
+      imports:  [RouterTestingModule.withRoutes(REVISED_ROUTES)],
+      providers : [ProductService, ]
     })
     .compileComponents();
   });
